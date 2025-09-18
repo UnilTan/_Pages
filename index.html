@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoWatch MEXC - Умный Бот для Мониторинга Криптовалют</title>
+    <meta name="description" content="Профессиональный Telegram-бот для мониторинга ценовых движений на бирже MEXC с техническим анализом и умными сигналами">
+    <meta name="keywords" content="криптовалюта, мониторинг, MEXC, telegram бот, торговые сигналы, технический анализ">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="CryptoWatch MEXC - Умный Бот Мониторинга">
+    <meta property="og:description" content="Получайте качественные торговые сигналы с техническим анализом">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-chart-line"></i>
+                <span>CryptoWatch MEXC</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#features" class="nav-link">Возможности</a>
+                <a href="#signals" class="nav-link">Сигналы</a>
+                <a href="#analytics" class="nav-link">Аналитика</a>
+                <a href="#contact" class="nav-link">Контакты</a>
+                <a href="#start" class="nav-link btn-primary">Начать</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="crypto-animation">
+                <div class="crypto-icon" style="--delay: 0s">₿</div>
+                <div class="crypto-icon" style="--delay: 1s">Ξ</div>
+                <div class="crypto-icon" style="--delay: 2s">₿</div>
+                <div class="crypto-icon" style="--delay: 3s">Ξ</div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Умный Мониторинг</span><br>
+                    Криптовалют MEXC
+                </h1>
+                <p class="hero-subtitle">
+                    Профессиональный Telegram-бот с техническим анализом, 
+                    интеллектуальной фильтрацией и точными торговыми сигналами
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Мониторинг</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5-12%</span>
+                        <span class="stat-label">Пороги</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">RSI+MACD</span>
+                        <span class="stat-label">Анализ</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#start" class="btn btn-primary btn-large">
+                        <i class="fab fa-telegram"></i>
+                        Подключиться к боту
+                    </a>
+                    <button id="demoBtn" class="btn btn-secondary btn-large">
+                        <i class="fas fa-play"></i>
+                        Посмотреть демо
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="trading-card">
+                    <div class="card-header">
+                        <span class="signal-badge pump">📈 PUMP: +12.5%</span>
+                        <span class="coin-name">BTC_USDT</span>
+                    </div>
+                    <div class="price-info">
+                        <span class="price-old">$42,150</span>
+                        <span class="price-arrow">→</span>
+                        <span class="price-current">$47,420</span>
+                    </div>
+                    <div class="technical-info">
+                        <div class="indicator">
+                            <span class="label">RSI (14):</span>
+                            <span class="value green">75.2 🔴 Перекуплено</span>
+                        </div>
+                        <div class="indicator">
+                            <span class="label">MACD:</span>
+                            <span class="value green">📈 Бычий</span>
+                        </div>
+                        <div class="indicator">
+                            <span class="label">Качество:</span>
+                            <span class="value">ВЫСОКИЙ (85%)</span>
+                        </div>
+                    </div>
+                    <div class="targets">
+                        <div class="target-item">🎯 Цели: $48,500 | $50,200 | $52,800</div>
+                        <div class="target-item">🛡 Стоп: $45,900</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ключевые Возможности</h2>
+                <p class="section-subtitle">Всё необходимое для успешной торговли в одном боте</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Умная Фильтрация</h3>
+                    <p>Интеллектуальная система фильтрации ложных сигналов на основе технического анализа и объёмов торгов</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Технический Анализ</h3>
+                    <p>RSI, MACD, полосы Боллинджера и анализ волатильности для каждого сигнала</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-target"></i>
+                    </div>
+                    <h3>Точные Цели</h3>
+                    <p>Автоматический расчёт целей и стоп-лоссов на основе качества сигнала и рыночных условий</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Горячие Монеты</h3>
+                    <p>Детектор трендовых монет с анализом объёмов и ценовой динамики за последние часы</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Обучение</h3>
+                    <p>Ежедневные образовательные материалы и советы по торговле криптовалютами</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Статистика</h3>
+                    <p>Подробная статистика по сигналам, отслеживание результатов и аналитика эффективности</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signals Section -->
+    <section id="signals" class="signals">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Типы Сигналов</h2>
+                <p class="section-subtitle">Настраиваемые пороги для разных торговых стратегий</p>
+            </div>
+            <div class="signals-grid">
+                <div class="signal-card">
+                    <div class="signal-header">
+                        <h3>5% Сигналы</h3>
+                        <span class="signal-badge quick">Быстрые</span>
+                    </div>
+                    <ul class="signal-features">
+                        <li><i class="fas fa-check"></i> Высокая частота сигналов</li>
+                        <li><i class="fas fa-check"></i> Подходит для скальпинга</li>
+                        <li><i class="fas fa-check"></i> Умная фильтрация ложных срабатываний</li>
+                        <li><i class="fas fa-check"></i> Горячие монеты и статистика</li>
+                    </ul>
+                </div>
+                <div class="signal-card featured">
+                    <div class="signal-header">
+                        <h3>7% Сигналы</h3>
+                        <span class="signal-badge balanced">Сбалансированные</span>
+                    </div>
+                    <ul class="signal-features">
+                        <li><i class="fas fa-check"></i> Оптимальное соотношение частоты/качества</li>
+                        <li><i class="fas fa-check"></i> Средние движения рынка</li>
+                        <li><i class="fas fa-check"></i> Полный технический анализ</li>
+                        <li><i class="fas fa-check"></i> Рекомендации по позициям</li>
+                    </ul>
+                </div>
+                <div class="signal-card">
+                    <div class="signal-header">
+                        <h3>12% Сигналы</h3>
+                        <span class="signal-badge premium">Премиум</span>
+                    </div>
+                    <ul class="signal-features">
+                        <li><i class="fas fa-check"></i> 60-секундное подтверждение</li>
+                        <li><i class="fas fa-check"></i> Сильные движения рынка</li>
+                        <li><i class="fas fa-check"></i> Высокое качество сигналов</li>
+                        <li><i class="fas fa-check"></i> Детектор продолжения трендов</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section id="analytics" class="analytics">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Аналитика и Мониторинг</h2>
+                <p class="section-subtitle">Полный контроль над торговыми операциями</p>
+            </div>
+            <div class="analytics-content">
+                <div class="analytics-text">
+                    <h3>Продвинутая Система Отслеживания</h3>
+                    <ul class="analytics-features">
+                        <li><i class="fas fa-eye"></i> Отслеживание результатов каждого сигнала</li>
+                        <li><i class="fas fa-bell"></i> Уведомления о достижении целей</li>
+                        <li><i class="fas fa-chart-pie"></i> Ежедневная статистика эффективности</li>
+                        <li><i class="fas fa-clock"></i> Follow-up сигналов до 48 часов</li>
+                        <li><i class="fas fa-shield-alt"></i> Автоматическая очистка устаревших данных</li>
+                    </ul>
+                    <div class="analytics-metrics">
+                        <div class="metric">
+                            <span class="metric-value">85%</span>
+                            <span class="metric-label">Точность сигналов</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">2.3x</span>
+                            <span class="metric-label">Средняя прибыль</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">24/7</span>
+                            <span class="metric-label">Работа без перерывов</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="analytics-visual">
+                    <div class="chart-container">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Как Это Работает</h2>
+                <p class="section-subtitle">Простой процесс от подключения до получения прибыли</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Подключение</h3>
+                    <p>Добавьте бота в свой Telegram канал или группу</p>
+                    <i class="fas fa-plus-circle step-icon"></i>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Настройка</h3>
+                    <p>Выберите пороги сигналов и настройте фильтры</p>
+                    <i class="fas fa-cog step-icon"></i>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Мониторинг</h3>
+                    <p>Бот анализирует рынок 24/7 и отправляет качественные сигналы</p>
+                    <i class="fas fa-search step-icon"></i>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <h3>Торговля</h3>
+                    <p>Получайте прибыль, следуя рекомендациям с техническим анализом</p>
+                    <i class="fas fa-chart-line step-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Section -->
+    <section id="start" class="start-section">
+        <div class="container">
+            <div class="start-content">
+                <h2>Готовы Начать?</h2>
+                <p>Подключитесь к CryptoWatch MEXC и получите доступ к профессиональным торговым сигналам</p>
+                <div class="start-actions">
+                    <a href="https://t.me/DUMPBest_bot" class="btn btn-primary btn-large" target="_blank">
+                        <i class="fab fa-telegram"></i>
+                        Запустить Бота
+                    </a>
+                    <div class="contact-info">
+                        <p>Нужна помощь? Свяжитесь с нами:</p>
+                        <a href="https://t.me/Solnyshchko" target="_blank">
+                            <i class="fab fa-telegram"></i>
+                            @YourSupport
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand">
+                        <i class="fas fa-chart-line"></i>
+                        <span>CryptoWatch MEXC</span>
+                    </div>
+                    <p>Профессиональный мониторинг криптовалют для успешной торговли</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Продукт</h4>
+                        <a href="#features">Возможности</a>
+                        <a href="#signals">Сигналы</a>
+                        <a href="#analytics">Аналитика</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Поддержка</h4>
+                        <a href="#contact" onclick="showContactModal()">Контакты</a>
+                        <a href="#help" onclick="showHelpModal()">Помощь</a>
+                        <a href="#docs" onclick="showDocsModal()">Документация</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Социальные сети</h4>
+                        <a href="https://t.me/DUMPBest_bot" target="_blank" class="social-link">
+                            <i class="fab fa-telegram"></i> Telegram
+                        </a>
+                        <a href="https://twitter.com/cryptowatch_mexc" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://discord.gg/cryptowatch" target="_blank" class="social-link">
+                            <i class="fab fa-discord"></i> Discord
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CryptoWatch MEXC. Все права защищены. Код расположен под лицензией CLA подробнее на GitHub.</p>
+                <div class="footer-disclaimer">
+                    <small>⚠️ Торговля криптовалютами связана с высокими рисками. Инвестируйте ответственно.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <button class="video-modal-close">&times;</button>
+            <div class="video-container">
+                <iframe id="vimeoPlayer" 
+                        src="" 
+                        frameborder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="info-modal">
+        <div class="info-modal-content">
+            <button class="info-modal-close">&times;</button>
+            <div class="modal-header">
+                <h2><i class="fas fa-envelope"></i> Связаться с нами</h2>
+            </div>
+            <div class="modal-body">
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fab fa-telegram"></i>
+                        <div class="contact-info">
+                            <h4>Telegram</h4>
+                            <p>Основной канал поддержки</p>
+                            <a href="https://t.me/Solnyshchko" target="_blank" class="contact-btn">
+                                @Solnyshchko
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-robot"></i>
+                        <div class="contact-info">
+                            <h4>Бот поддержки</h4>
+                            <p>Автоматические ответы 24/7</p>
+                            <a href="https://t.me/DUMPBest_bot" target="_blank" class="contact-btn">
+                                @DUMPBest_bot
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-info">
+                            <h4>Время работы</h4>
+                            <p>Ответы в течение 1-2 часов</p>
+                            <span class="status online">● Онлайн</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Быстрое сообщение</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Email (необязательно)">
+                        <textarea placeholder="Ваш вопрос или сообщение" rows="4" required></textarea>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Отправить
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="info-modal">
+        <div class="info-modal-content">
+            <button class="info-modal-close">&times;</button>
+            <div class="modal-header">
+                <h2><i class="fas fa-question-circle"></i> Помощь и FAQ</h2>
+            </div>
+            <div class="modal-body">
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Как начать использовать бота?
+                        </div>
+                        <div class="faq-answer">
+                            <p>1. Перейдите по ссылке на бота @DUMPBest_bot</p>
+                            <p>2. Нажмите /start для активации</p>
+                            <p>3. Выберите интересующие вас пороги сигналов</p>
+                            <p>4. Настройте фильтры под свою торговую стратегию</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Какие пороги сигналов лучше выбрать?
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>5% сигналы:</strong> Для активной торговли и скальпинга</p>
+                            <p><strong>7% сигналы:</strong> Оптимальный баланс частоты и качества</p>
+                            <p><strong>12% сигналы:</strong> Для консервативной торговли крупными суммами</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Как работает технический анализ?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Бот анализирует несколько индикаторов:</p>
+                            <ul>
+                                <li><strong>RSI:</strong> Определяет перекупленность/перепроданность</li>
+                                <li><strong>MACD:</strong> Показывает направление тренда</li>
+                                <li><strong>Объемы:</strong> Подтверждают силу движения</li>
+                                <li><strong>Волатильность:</strong> Оценивает риски</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <i class="fas fa-chevron-right"></i>
+                            Бесплатно ли использование бота?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Да! Базовая функциональность бота полностью бесплатна:</p>
+                            <ul>
+                                <li>Получение торговых сигналов</li>
+                                <li>Технический анализ</li>
+                                <li>Статистика и отслеживание</li>
+                            </ul>
+                            <p>Премиум функции добавляются по запросу сообщества.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Documentation Modal -->
+    <div id="docsModal" class="info-modal">
+        <div class="info-modal-content">
+            <button class="info-modal-close">&times;</button>
+            <div class="modal-header">
+                <h2><i class="fas fa-book"></i> Документация</h2>
+            </div>
+            <div class="modal-body">
+                <div class="docs-navigation">
+                    <div class="docs-nav-item active" onclick="showDocsSection('getting-started')">
+                        <i class="fas fa-play"></i> Начало работы
+                    </div>
+                    <div class="docs-nav-item" onclick="showDocsSection('commands')">
+                        <i class="fas fa-terminal"></i> Команды
+                    </div>
+                    <div class="docs-nav-item" onclick="showDocsSection('settings')">
+                        <i class="fas fa-cog"></i> Настройки
+                    </div>
+                    <div class="docs-nav-item" onclick="showDocsSection('api')">
+                        <i class="fas fa-code"></i> API
+                    </div>
+                </div>
+                <div class="docs-content">
+                    <div id="getting-started" class="docs-section active">
+                        <h3>Быстрый старт</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Telegram команды</span>
+                                <button class="copy-btn" data-copy="/start\n/help\n/settings">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre><code>/start - Запустить бота
+/help - Показать справку
+/settings - Открыть настройки</code></pre>
+                        </div>
+                        <p>После запуска бота вы получите приветственное сообщение с основными настройками.</p>
+                    </div>
+                    <div id="commands" class="docs-section">
+                        <h3>Все команды</h3>
+                        <div class="command-list">
+                            <div class="command-item">
+                                <code>/start</code>
+                                <span>Запуск и инициализация бота</span>
+                            </div>
+                            <div class="command-item">
+                                <code>/settings</code>
+                                <span>Настройки фильтров и порогов</span>
+                            </div>
+                            <div class="command-item">
+                                <code>/stats</code>
+                                <span>Статистика сигналов за период</span>
+                            </div>
+                            <div class="command-item">
+                                <code>/hot</code>
+                                <span>Список горячих монет</span>
+                            </div>
+                            <div class="command-item">
+                                <code>/stop</code>
+                                <span>Остановить уведомления</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="settings" class="docs-section">
+                        <h3>Настройки бота</h3>
+                        <h4>Пороги сигналов:</h4>
+                        <ul>
+                            <li><strong>5%:</strong> Высокая частота, подходит для скальпинга</li>
+                            <li><strong>7%:</strong> Сбалансированный режим (рекомендуется)</li>
+                            <li><strong>12%:</strong> Консервативный режим для крупных сделок</li>
+                        </ul>
+                        <h4>Фильтры качества:</h4>
+                        <ul>
+                            <li><strong>Минимальный RSI:</strong> Фильтр по индикатору RSI</li>
+                            <li><strong>MACD подтверждение:</strong> Требовать подтверждение тренда</li>
+                            <li><strong>Объем:</strong> Минимальный объем торгов</li>
+                        </ul>
+                    </div>
+                    <div id="api" class="docs-section">
+                        <h3>API интеграция</h3>
+                        <p>Для разработчиков доступны следующие возможности:</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Webhook пример</span>
+                                <button class="copy-btn" data-copy="https://api.telegram.org/bot<TOKEN>/setWebhook?url=<YOUR_URL>">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre><code>POST https://api.telegram.org/bot&lt;TOKEN&gt;/setWebhook
+{
+  "url": "https://your-domain.com/webhook",
+  "allowed_updates": ["message", "callback_query"]
+}</code></pre>
+                        </div>
+                        <p><strong>Примечание:</strong> API функции доступны по запросу для проверенных разработчиков.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="js/crypto-data.js"></script>
+    <script src="js/trading-card-updater.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
