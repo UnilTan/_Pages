@@ -1,23 +1,47 @@
-// Mobile Navigation Toggle
+// Mobile Sidebar Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
     
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
+    // Toggle sidebar on mobile
+    if (mobileMenuToggle && mobileSidebar && sidebarOverlay) {
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileSidebar.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+            document.body.style.overflow = mobileSidebar.classList.contains('active') ? 'hidden' : '';
         });
         
-        // Close menu when clicking on links
-        const navLinks = navMenu.querySelectorAll('.nav-link');
+        // Close sidebar when clicking overlay
+        sidebarOverlay.addEventListener('click', function() {
+            mobileSidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close sidebar when clicking on links
+        const navLinks = mobileSidebar.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
+                mobileSidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                document.body.style.overflow = '';
             });
         });
     }
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            mobileSidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 });
 
 // Smooth Scrolling for Navigation Links
@@ -26,7 +50,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+            // Account for fixed navbar on desktop
+            const offset = window.innerWidth > 768 ? 80 : 20;
+            const offsetTop = target.offsetTop - offset;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -35,13 +61,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar Background on Scroll
+// Navbar scroll effects
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(26, 26, 46, 0.98)';
-    } else {
-        navbar.style.background = 'rgba(26, 26, 46, 0.95)';
+    if (navbar && window.innerWidth > 768) {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'linear-gradient(135deg, rgba(26, 26, 46, 0.98) 0%, rgba(15, 52, 96, 0.98) 50%, rgba(22, 33, 62, 0.98) 100%)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 212, 255, 0.15)';
+        } else {
+            navbar.style.background = 'linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(15, 52, 96, 0.95) 50%, rgba(22, 33, 62, 0.95) 100%)';
+            navbar.style.boxShadow = 'none';
+        }
     }
 });
 

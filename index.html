@@ -20,30 +20,94 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Global Site Particles -->
+    <div class="site-particles">
+        <div class="site-particle" style="--x: 5%; --y: 10%; --delay: 0s;"></div>
+        <div class="site-particle" style="--x: 95%; --y: 15%; --delay: 2s;"></div>
+        <div class="site-particle" style="--x: 15%; --y: 25%; --delay: 4s;"></div>
+        <div class="site-particle" style="--x: 85%; --y: 35%; --delay: 6s;"></div>
+        <div class="site-particle" style="--x: 25%; --y: 45%; --delay: 8s;"></div>
+        <div class="site-particle" style="--x: 75%; --y: 55%; --delay: 10s;"></div>
+        <div class="site-particle" style="--x: 35%; --y: 65%; --delay: 12s;"></div>
+        <div class="site-particle" style="--x: 65%; --y: 75%; --delay: 14s;"></div>
+        <div class="site-particle" style="--x: 45%; --y: 85%; --delay: 16s;"></div>
+        <div class="site-particle" style="--x: 55%; --y: 95%; --delay: 18s;"></div>
+    </div>
+
+    <!-- Desktop Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
                 <i class="fas fa-chart-line"></i>
                 <span>CryptoWatch MEXC</span>
             </div>
-            <div class="nav-menu" id="navMenu">
+            <div class="nav-menu">
                 <a href="#features" class="nav-link">Возможности</a>
                 <a href="#signals" class="nav-link">Сигналы</a>
                 <a href="#analytics" class="nav-link">Аналитика</a>
-                <a href="#contact" class="nav-link">Контакты</a>
+                <a href="#contact" class="nav-link" onclick="showContactModal()">Контакты</a>
                 <a href="#start" class="nav-link btn-primary">Начать</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
             </div>
         </div>
     </nav>
 
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Mobile Sidebar Navigation -->
+    <nav class="mobile-sidebar" id="mobileSidebar">
+        <div class="sidebar-header">
+            <div class="nav-brand">
+                <i class="fas fa-chart-line"></i>
+                <span>CryptoWatch MEXC</span>
+            </div>
+        </div>
+        <div class="sidebar-menu">
+            <a href="#features" class="nav-link">
+                <i class="fas fa-star"></i>
+                <span>Возможности</span>
+            </a>
+            <a href="#signals" class="nav-link">
+                <i class="fas fa-signal"></i>
+                <span>Сигналы</span>
+            </a>
+            <a href="#analytics" class="nav-link">
+                <i class="fas fa-chart-bar"></i>
+                <span>Аналитика</span>
+            </a>
+            <a href="#contact" class="nav-link" onclick="showContactModal()">
+                <i class="fas fa-envelope"></i>
+                <span>Контакты</span>
+            </a>
+            <a href="#start" class="nav-link primary-link">
+                <i class="fab fa-telegram"></i>
+                <span>Начать</span>
+            </a>
+        </div>
+        <div class="sidebar-footer">
+            <div class="social-links">
+                <a href="https://t.me/DUMPBest_bot" target="_blank" title="Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://twitter.com/cryptowatch_mexc" target="_blank" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://discord.gg/cryptowatch" target="_blank" title="Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <!-- Hero Section -->
-    <section class="hero">
+        <section class="hero">
         <div class="hero-background">
             <div class="crypto-animation">
                 <div class="crypto-icon" style="--delay: 0s">₿</div>
@@ -336,7 +400,7 @@
                         <p>Нужна помощь? Свяжитесь с нами:</p>
                         <a href="https://t.me/Solnyshchko" target="_blank">
                             <i class="fab fa-telegram"></i>
-                            @YourSupport
+                            @Solnyshchko
                         </a>
                     </div>
                 </div>
@@ -354,40 +418,58 @@
                         <span>CryptoWatch MEXC</span>
                     </div>
                     <p>Профессиональный мониторинг криптовалют для успешной торговли</p>
+                    <div class="footer-stats">
+                        <div class="footer-stat">
+                            <span class="stat-number" id="footerUsers">2,500+</span>
+                            <span class="stat-label">Активных пользователей</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span class="stat-number" id="footerSignals">15,000+</span>
+                            <span class="stat-label">Отправлено сигналов</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>Продукт</h4>
-                        <a href="#features">Возможности</a>
-                        <a href="#signals">Сигналы</a>
-                        <a href="#analytics">Аналитика</a>
-                    </div>
-                    <div class="link-group">
-                        <h4>Поддержка</h4>
-                        <a href="#contact" onclick="showContactModal()">Контакты</a>
-                        <a href="#help" onclick="showHelpModal()">Помощь</a>
-                        <a href="#docs" onclick="showDocsModal()">Документация</a>
-                    </div>
-                    <div class="link-group">
-                        <h4>Социальные сети</h4>
-                        <a href="https://t.me/DUMPBest_bot" target="_blank" class="social-link">
-                            <i class="fab fa-telegram"></i> Telegram
-                        </a>
-                        <a href="https://twitter.com/cryptowatch_mexc" target="_blank" class="social-link">
-                            <i class="fab fa-twitter"></i> Twitter
-                        </a>
-                        <a href="https://discord.gg/cryptowatch" target="_blank" class="social-link">
-                            <i class="fab fa-discord"></i> Discord
-                        </a>
-                    </div>
+                <div class="link-group">
+                    <h4><i class="fas fa-cog"></i> Продукт</h4>
+                    <a href="#features"><i class="fas fa-star"></i> Возможности</a>
+                    <a href="#signals"><i class="fas fa-signal"></i> Сигналы</a>
+                    <a href="#analytics"><i class="fas fa-chart-bar"></i> Аналитика</a>
+                </div>
+                <div class="link-group">
+                    <h4><i class="fas fa-headset"></i> Поддержка</h4>
+                    <a href="#contact" onclick="showContactModal()"><i class="fas fa-envelope"></i> Контакты</a>
+                    <a href="#help" onclick="showHelpModal()"><i class="fas fa-question-circle"></i> Помощь</a>
+                    <a href="#docs" onclick="showDocsModal()"><i class="fas fa-book"></i> Документация</a>
+                </div>
+                <div class="link-group">
+                    <h4><i class="fas fa-share-alt"></i> Социальные сети</h4>
+                    <a href="https://t.me/DUMPBest_bot" target="_blank" class="social-link">
+                        <i class="fab fa-telegram"></i> Telegram
+                    </a>
+                    <a href="https://twitter.com/cryptowatch_mexc" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="https://discord.gg/cryptowatch" target="_blank" class="social-link">
+                        <i class="fab fa-discord"></i> Discord
+                    </a>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 CryptoWatch MEXC. Все права защищены. Код расположен под лицензией CLA подробнее на GitHub.</p>
                 <div class="footer-disclaimer">
-                    <small>⚠️ Торговля криптовалютами связана с высокими рисками. Инвестируйте ответственно.</small>
+                    <small><i class="fas fa-exclamation-triangle"></i> Торговля криптовалютами связана с высокими рисками. Инвестируйте ответственно.</small>
                 </div>
             </div>
+        </div>
+        
+        <!-- Floating particles for footer -->
+        <div class="footer-particles">
+            <div class="footer-particle" style="--x: 10%; --y: 20%; --delay: 0s;"></div>
+            <div class="footer-particle" style="--x: 85%; --y: 30%; --delay: 1s;"></div>
+            <div class="footer-particle" style="--x: 25%; --y: 70%; --delay: 2s;"></div>
+            <div class="footer-particle" style="--x: 70%; --y: 15%; --delay: 3s;"></div>
+            <div class="footer-particle" style="--x: 45%; --y: 85%; --delay: 4s;"></div>
+            <div class="footer-particle" style="--x: 90%; --y: 60%; --delay: 5s;"></div>
         </div>
     </footer>
 
