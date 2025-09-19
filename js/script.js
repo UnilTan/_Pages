@@ -526,6 +526,718 @@ function initVideoModal() {
     });
 }
 
+// Modal Management System
+class ModalManager {
+    constructor() {
+        this.activeModal = null;
+        this.init();
+    }
+
+    init() {
+        // Add event listeners for modal triggers and closes
+        this.addEventListeners();
+    }
+
+    addEventListeners() {
+        // Close modals when clicking outside or pressing Escape
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('info-modal') || 
+                e.target.classList.contains('video-modal')) {
+                this.closeModal(e.target);
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.activeModal) {
+                this.closeModal(this.activeModal);
+            }
+        });
+
+        // Close buttons
+        document.querySelectorAll('.info-modal-close, .video-modal-close').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const modal = e.target.closest('.info-modal, .video-modal');
+                this.closeModal(modal);
+            });
+        });
+    }
+
+    openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (!modal) return false;
+
+        // Close any existing modal first
+        if (this.activeModal) {
+            this.closeModal(this.activeModal);
+        }
+
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // Smooth animation
+        requestAnimationFrame(() => {
+            modal.classList.add('show');
+        });
+
+        this.activeModal = modal;
+        return true;
+    }
+
+    closeModal(modal) {
+        if (!modal) return;
+
+        modal.classList.remove('show');
+        
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            if (this.activeModal === modal) {
+                this.activeModal = null;
+            }
+        }, 300);
+    }
+}
+
+// Initialize modal manager
+const modalManager = new ModalManager();
+
+// Modal Functions
+function showContactModal() {
+    modalManager.openModal('contactModal');
+}
+
+function showHelpModal() {
+    modalManager.openModal('helpModal');
+}
+
+function showDocsModal() {
+    modalManager.openModal('docsModal');
+}
+
+// FAQ Toggle Functionality
+function toggleFAQ(element) {
+    const faqItem = element.parentElement;
+    const answer = faqItem.querySelector('.faq-answer');
+    const icon = element.querySelector('i');
+    
+    // Close other FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+            item.querySelector('.faq-question').classList.remove('active');
+            item.querySelector('.faq-answer').classList.remove('active');
+        }
+    });
+    
+    // Toggle current FAQ item
+    element.classList.toggle('active');
+    answer.classList.toggle('active');
+}
+
+// Documentation Navigation
+function showDocsSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.docs-section').forEach(section => {
+        section.classList.remove('active');
+    });
+    
+    // Remove active from all nav items
+    document.querySelectorAll('.docs-nav-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Show selected section
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.classList.add('active');
+    }
+    
+    // Add active to clicked nav item
+    event.target.classList.add('active');
+}
+
+// Enhanced Button Animations
+function addButtonEnhancements() {
+    // Add ripple effect to buttons
+    document.querySelectorAll('.btn, .contact-btn, .copy-btn').forEach(btn => {
+        btn.addEventListener('click', createRippleEffect);
+    });
+
+    // Add magnetic effect to primary buttons
+    document.querySelectorAll('.btn-primary').forEach(btn => {
+        btn.addEventListener('mouseenter', addMagneticEffect);
+        btn.addEventListener('mouseleave', removeMagneticEffect);
+        btn.addEventListener('mousemove', updateMagneticEffect);
+    });
+}
+
+function createRippleEffect(e) {
+    const button = e.currentTarget;
+    const ripple = document.createElement('span');
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+    
+    ripple.style.cssText = `
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        left: ${x}px;
+        top: ${y}px;
+        width: ${size}px;
+        height: ${size}px;
+        pointer-events: none;
+    `;
+    
+    // Add ripple animation keyframes if not exists
+    if (!document.querySelector('#ripple-styles')) {
+        const style = document.createElement('style');
+        style.id = 'ripple-styles';
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+            .btn, .contact-btn, .copy-btn {
+                position: relative;
+                overflow: hidden;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    button.appendChild(ripple);
+    
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
+
+function addMagneticEffect(e) {
+    const btn = e.currentTarget;
+    btn.style.transition = 'transform 0.3s ease';
+}
+
+function removeMagneticEffect(e) {
+    const btn = e.currentTarget;
+    btn.style.transform = 'translate(0, 0) scale(1)';
+}
+
+function updateMagneticEffect(e) {
+    const btn = e.currentTarget;
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    
+    const moveX = x * 0.1;
+    const moveY = y * 0.1;
+    
+    btn.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+}
+
+// Enhanced Card Animations
+function addCardAnimations() {
+    const cards = document.querySelectorAll('.feature-card, .signal-card, .step-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', (e) => {
+            // Add floating effect
+            e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
+            e.currentTarget.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            
+            // Add glow effect
+            e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 212, 255, 0.15)';
+        });
+        
+        card.addEventListener('mouseleave', (e) => {
+            e.currentTarget.style.transform = 'translateY(0) scale(1)';
+            e.currentTarget.style.boxShadow = '';
+        });
+    });
+}
+
+// Enhanced Navigation Animations
+function addNavAnimations() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', (e) => {
+            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.textShadow = '0 4px 8px rgba(0, 212, 255, 0.3)';
+        });
+        
+        link.addEventListener('mouseleave', (e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.textShadow = '';
+        });
+    });
+}
+
+// Scroll-triggered Animations
+function addScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const animateObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards';
+                animateObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Add animation styles
+    if (!document.querySelector('#scroll-animations')) {
+        const style = document.createElement('style');
+        style.id = 'scroll-animations';
+        style.textContent = `
+            @keyframes slideInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            @keyframes fadeInScale {
+                from {
+                    opacity: 0;
+                    transform: scale(0.8);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+            
+            @keyframes slideInLeft {
+                from {
+                    opacity: 0;
+                    transform: translateX(-50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            @keyframes slideInRight {
+                from {
+                    opacity: 0;
+                    transform: translateX(50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // Observe elements for animations
+    const elementsToAnimate = document.querySelectorAll(
+        '.feature-card, .signal-card, .step-card, .section-header, .analytics-text, .hero-visual'
+    );
+    
+    elementsToAnimate.forEach((el, index) => {
+        // Add different animation delays
+        el.style.animationDelay = `${index * 0.1}s`;
+        el.style.opacity = '0';
+        animateObserver.observe(el);
+    });
+}
+
+// Contact Form Enhancement
+function enhanceContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        // Show loading state
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправляется...';
+        submitBtn.disabled = true;
+        
+        // Simulate form submission (replace with actual endpoint)
+        try {
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Success state
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Отправлено!';
+            submitBtn.style.background = 'var(--success-color)';
+            
+            showNotification('Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.', 'success');
+            
+            // Reset form
+            this.reset();
+            
+            // Close modal after delay
+            setTimeout(() => {
+                modalManager.closeModal(document.getElementById('contactModal'));
+            }, 2000);
+            
+        } catch (error) {
+            submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Ошибка';
+            submitBtn.style.background = 'var(--danger-color)';
+            showNotification('Произошла ошибка при отправке. Попробуйте позже.', 'error');
+        } finally {
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.background = '';
+            }, 3000);
+        }
+    });
+}
+
+// Enhanced Copy Functionality
+function enhanceCopyFunctionality() {
+    document.addEventListener('click', async function(e) {
+        if (e.target.classList.contains('copy-btn') || e.target.closest('.copy-btn')) {
+            const btn = e.target.closest('.copy-btn') || e.target;
+            const textToCopy = btn.dataset.copy;
+            
+            if (!textToCopy) return;
+            
+            try {
+                await navigator.clipboard.writeText(textToCopy);
+                
+                // Visual feedback
+                const originalIcon = btn.querySelector('i').className;
+                const iconElement = btn.querySelector('i');
+                
+                iconElement.className = 'fas fa-check';
+                btn.style.background = 'rgba(76, 205, 196, 0.2)';
+                
+                showNotification('Скопировано в буфер обмена!', 'success');
+                
+                setTimeout(() => {
+                    iconElement.className = originalIcon;
+                    btn.style.background = '';
+                }, 2000);
+                
+            } catch (error) {
+                showNotification('Ошибка при копировании', 'error');
+            }
+        }
+    });
+}
+
+// Enhanced Notification System
+function enhanceNotifications() {
+    // Override the existing showNotification function with better styling
+    window.showNotification = function(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        
+        // Add icon based on type
+        const icons = {
+            success: 'fas fa-check-circle',
+            error: 'fas fa-exclamation-circle',
+            info: 'fas fa-info-circle',
+            warning: 'fas fa-exclamation-triangle'
+        };
+        
+        notification.innerHTML = `
+            <i class="${icons[type] || icons.info}"></i>
+            <span>${message}</span>
+            <button class="notification-close">&times;</button>
+        `;
+        
+        // Enhanced styling
+        Object.assign(notification.style, {
+            position: 'fixed',
+            top: '20px',
+            right: '20px',
+            padding: '15px 20px',
+            borderRadius: '12px',
+            color: 'white',
+            fontWeight: '500',
+            zIndex: '10000',
+            transform: 'translateX(100%)',
+            transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+            maxWidth: '350px',
+            minWidth: '250px',
+            wordWrap: 'break-word',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+            backdropFilter: 'blur(10px)'
+        });
+        
+        // Set background color based on type
+        const colors = {
+            success: 'linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%)',
+            error: 'linear-gradient(135deg, #FF6B6B 0%, #EE5A52 100%)',
+            info: 'linear-gradient(135deg, #00D4FF 0%, #0099CC 100%)',
+            warning: 'linear-gradient(135deg, #FFE66D 0%, #FFA726 100%)'
+        };
+        notification.style.background = colors[type] || colors.info;
+        
+        // Close button styling
+        const closeBtn = notification.querySelector('.notification-close');
+        closeBtn.style.cssText = `
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            margin-left: auto;
+            transition: all 0.2s ease;
+        `;
+        
+        closeBtn.addEventListener('click', () => {
+            removeNotification(notification);
+        });
+        
+        closeBtn.addEventListener('mouseenter', () => {
+            closeBtn.style.background = 'rgba(255, 255, 255, 0.3)';
+            closeBtn.style.transform = 'scale(1.1)';
+        });
+        
+        closeBtn.addEventListener('mouseleave', () => {
+            closeBtn.style.background = 'rgba(255, 255, 255, 0.2)';
+            closeBtn.style.transform = 'scale(1)';
+        });
+        
+        document.body.appendChild(notification);
+        
+        // Animate in
+        setTimeout(() => {
+            notification.style.transform = 'translateX(0)';
+        }, 10);
+        
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+            removeNotification(notification);
+        }, 5000);
+        
+        function removeNotification(notif) {
+            notif.style.transform = 'translateX(100%)';
+            notif.style.opacity = '0';
+            setTimeout(() => {
+                if (notif.parentNode) {
+                    notif.parentNode.removeChild(notif);
+                }
+            }, 400);
+        }
+    };
+}
+
+// Signal Card Selection System
+let selectedSignal = null;
+
+function selectSignalCard(cardElement) {
+    const signalType = cardElement.dataset.signal;
+    
+    // Remove selection from all cards
+    document.querySelectorAll('.signal-card').forEach(card => {
+        card.classList.remove('selected');
+    });
+    
+    // Add selection to clicked card
+    cardElement.classList.add('selected');
+    selectedSignal = signalType;
+    
+    // Show selection feedback
+    showNotification(`Выбран тип сигналов: ${signalType}%`, 'info');
+    
+    // Add selection animation without breaking the card visibility
+    cardElement.style.transform = 'scale(1.05)';
+    setTimeout(() => {
+        cardElement.style.transform = '';
+    }, 200);
+    
+    // Store selection in localStorage
+    localStorage.setItem('selectedSignal', signalType);
+    
+    console.log(`🎯 Выбран тип сигналов: ${signalType}%`);
+}
+
+// Load previously selected signal on page load
+function loadSelectedSignal() {
+    const savedSignal = localStorage.getItem('selectedSignal');
+    if (savedSignal) {
+        const savedCard = document.querySelector(`[data-signal="${savedSignal}"]`);
+        if (savedCard) {
+            // Add selection without notification on page load
+            document.querySelectorAll('.signal-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            savedCard.classList.add('selected');
+            selectedSignal = savedSignal;
+            console.log(`🎯 Восстановлен выбор: ${savedSignal}% сигналы`);
+        }
+    } else {
+        // Default selection - 7% signals (featured)
+        const defaultCard = document.querySelector('[data-signal="7"]');
+        if (defaultCard) {
+            defaultCard.classList.add('selected');
+            selectedSignal = '7';
+            localStorage.setItem('selectedSignal', '7');
+            console.log('🎯 Выбор по умолчанию: 7% сигналы');
+        }
+    }
+}
+
+// Enhanced signal card interactions
+function enhanceSignalCards() {
+    const signalCards = document.querySelectorAll('.signal-card.clickable');
+    
+    signalCards.forEach(card => {
+        // Add keyboard support
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `Выбрать ${card.dataset.signal}% сигналы`);
+        
+        // Keyboard navigation
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                selectSignalCard(card);
+            }
+        });
+        
+        // Enhanced hover effects
+        card.addEventListener('mouseenter', () => {
+            if (!card.classList.contains('selected')) {
+                card.style.transform = 'translateY(-5px) scale(1.02)';
+                card.style.boxShadow = '0 15px 35px rgba(0, 212, 255, 0.15)';
+            }
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            if (!card.classList.contains('selected')) {
+                card.style.transform = '';
+                card.style.boxShadow = '';
+            }
+        });
+    });
+    
+    // Load saved selection
+    setTimeout(loadSelectedSignal, 500);
+}
+
+// Boosty button analytics
+function trackBoostyClick(signalType) {
+    // Analytics tracking
+    console.log(`🚀 Boosty click: ${signalType}% signals`);
+    
+    // Show feedback
+    showNotification('Переход на Boosty...', 'info');
+    
+    // You can add analytics code here
+    // gtag('event', 'boosty_click', { signal_type: signalType });
+}
+
+// Add click tracking to boosty buttons
+function enhanceBoostyButtons() {
+    document.querySelectorAll('.boosty-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const signalCard = e.target.closest('.signal-card');
+            const signalType = signalCard ? signalCard.dataset.signal : 'unknown';
+            trackBoostyClick(signalType);
+        });
+    });
+}
+
+// Signal card comparison feature
+function addSignalComparison() {
+    const signalData = {
+        '5': {
+            frequency: 'Высокая',
+            quality: 'Средняя',
+            risk: 'Высокий',
+            profit: '5-15%',
+            timeframe: '1-5 мин'
+        },
+        '7': {
+            frequency: 'Средняя',
+            quality: 'Высокая',
+            risk: 'Средний',
+            profit: '7-20%',
+            timeframe: '5-15 мин'
+        },
+        '12': {
+            frequency: 'Низкая',
+            quality: 'Очень высокая',
+            risk: 'Низкий',
+            profit: '12-30%',
+            timeframe: '15-60 мин'
+        }
+    };
+    
+    // Add tooltip with comparison data
+    document.querySelectorAll('.signal-card').forEach(card => {
+        const signalType = card.dataset.signal;
+        const data = signalData[signalType];
+        
+        if (data) {
+            card.setAttribute('title', 
+                `Частота: ${data.frequency}\n` +
+                `Качество: ${data.quality}\n` +
+                `Риск: ${data.risk}\n` +
+                `Потенциал: ${data.profit}\n` +
+                `Таймфрейм: ${data.timeframe}`
+            );
+        }
+    });
+}
+
+// Initialize all enhancements
+document.addEventListener('DOMContentLoaded', function() {
+    // Existing initializations
+    initFormHandlers();
+    initLazyLoading();
+    initParallax();
+    initCopyToClipboard();
+    initThemeToggle();
+    initVideoModal();
+    
+    // New enhancements
+    addButtonEnhancements();
+    addCardAnimations();
+    addNavAnimations();
+    addScrollAnimations();
+    enhanceContactForm();
+    enhanceCopyFunctionality();
+    enhanceNotifications();
+    
+    // Signal cards enhancements
+    enhanceSignalCards();
+    enhanceBoostyButtons();
+    addSignalComparison();
+    
+    // Initialize real-time data after all enhancements
+    setTimeout(initRealTimeData, 1000);
+    
+    console.log('🎉 Все улучшения интерфейса загружены!');
+    console.log('🎯 Система выбора сигналов активирована!');
+});
+
 // Service Worker Registration (for PWA capabilities)
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
