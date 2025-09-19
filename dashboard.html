@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - CryptoWatch MEXC</title>
+    <meta name="description" content="Личный кабинет CryptoWatch MEXC - персональная аналитика торговых сигналов и настройки">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-page">
+    <!-- Global Site Particles -->
+    <div class="site-particles">
+        <div class="site-particle" style="--x: 5%; --y: 10%; --delay: 0s;"></div>
+        <div class="site-particle" style="--x: 95%; --y: 15%; --delay: 2s;"></div>
+        <div class="site-particle" style="--x: 15%; --y: 25%; --delay: 4s;"></div>
+        <div class="site-particle" style="--x: 85%; --y: 35%; --delay: 6s;"></div>
+    </div>
+
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="header-left">
+                <a href="index.html" class="brand">
+                    <i class="fas fa-chart-line"></i>
+                    <span>CryptoWatch MEXC</span>
+                </a>
+                <div class="breadcrumb">
+                    <i class="fas fa-home"></i>
+                    <span>Личный кабинет</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="bot-status" id="botStatus">
+                    <i class="fas fa-circle status-indicator"></i>
+                    <span class="status-text">Проверка...</span>
+                </div>
+                <div class="user-menu">
+                    <button class="user-avatar" id="userMenuToggle">
+                        <i class="fas fa-user"></i>
+                        <span id="userName">Пользователь</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-cog"></i>
+                            Настройки
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-question-circle"></i>
+                            Помощь
+                        </a>
+                        <hr class="dropdown-divider">
+                        <a href="#" class="dropdown-item" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Выйти
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-card">
+                    <div class="welcome-content">
+                        <h1>Добро пожаловать, <span id="welcomeUserName">Пользователь</span>!</h1>
+                        <p>Здесь вы можете отслеживать все данные, которые создает бот, в виде красивых графиков и аналитики.</p>
+                        <div class="welcome-stats">
+                            <div class="stat-item">
+                                <span class="stat-value" id="totalSignals">0</span>
+                                <span class="stat-label">Всего сигналов</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="successRate">0%</span>
+                                <span class="stat-label">Успешность</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="todaySignals">0</span>
+                                <span class="stat-label">Сегодня</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="welcome-visual">
+                        <div class="floating-icons">
+                            <i class="fas fa-chart-line"></i>
+                            <i class="fas fa-coins"></i>
+                            <i class="fas fa-trending-up"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Real-time Signals -->
+                <section class="dashboard-card signals-card">
+                    <div class="card-header">
+                        <h3>
+                            <i class="fas fa-signal"></i>
+                            Активные сигналы
+                        </h3>
+                        <div class="card-actions">
+                            <button class="btn-icon" id="refreshSignals" title="Обновить">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="btn-icon" id="signalsSettings" title="Настройки">
+                                <i class="fas fa-cog"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="signals-list" id="signalsList">
+                            <div class="signals-placeholder">
+                                <i class="fas fa-satellite-dish"></i>
+                                <p>Ожидание сигналов от бота...</p>
+                                <div class="loading-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Performance Chart -->
+                <section class="dashboard-card chart-card">
+                    <div class="card-header">
+                        <h3>
+                            <i class="fas fa-chart-area"></i>
+                            Производительность
+                        </h3>
+                        <div class="chart-controls">
+                            <select id="chartPeriod" class="chart-select">
+                                <option value="24h">24 часа</option>
+                                <option value="7d" selected>7 дней</option>
+                                <option value="30d">30 дней</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="chart-container">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Bot Status -->
+                <section class="dashboard-card bot-card">
+                    <div class="card-header">
+                        <h3>
+                            <i class="fas fa-robot"></i>
+                            Статус бота
+                        </h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="bot-info">
+                            <div class="bot-status-display" id="botStatusDisplay">
+                                <div class="status-icon">
+                                    <i class="fas fa-circle"></i>
+                                </div>
+                                <div class="status-details">
+                                    <span class="status-title">Проверка соединения...</span>
+                                    <span class="status-subtitle">Ожидание ответа</span>
+                                </div>
+                            </div>
+                            <div class="bot-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Время работы</span>
+                                    <span class="metric-value" id="botUptime">--:--:--</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Последний сигнал</span>
+                                    <span class="metric-value" id="lastSignalTime">Нет данных</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Активных пар</span>
+                                    <span class="metric-value" id="activePairs">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Trades -->
+                <section class="dashboard-card trades-card">
+                    <div class="card-header">
+                        <h3>
+                            <i class="fas fa-history"></i>
+                            Последние сделки
+                        </h3>
+                        <a href="#" class="view-all-link">Показать все</a>
+                    </div>
+                    <div class="card-content">
+                        <div class="trades-list" id="tradesList">
+                            <div class="trades-placeholder">
+                                <i class="fas fa-exchange-alt"></i>
+                                <p>История сделок пуста</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Settings Quick Access -->
+                <section class="dashboard-card settings-card">
+                    <div class="card-header">
+                        <h3>
+                            <i class="fas fa-sliders-h"></i>
+                            Быстрые настройки
+                        </h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="settings-grid">
+                            <div class="setting-item">
+                                <label class="setting-label">
+                                    <input type="checkbox" id="notificationsEnabled">
+                                    <span class="checkmark"></span>
+                                    Уведомления
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="setting-label">
+                                    <input type="checkbox" id="soundEnabled">
+                                    <span class="checkmark"></span>
+                                    Звуковые сигналы
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="setting-label">Пороги сигналов</label>
+                                <select id="signalThreshold" class="setting-select">
+                                    <option value="5">5%</option>
+                                    <option value="7" selected>7%</option>
+                                    <option value="12">12%</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label class="setting-label">Автообновление</label>
+                                <select id="autoRefresh" class="setting-select">
+                                    <option value="30">30 сек</option>
+                                    <option value="60" selected>1 мин</option>
+                                    <option value="300">5 мин</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Hot Coins -->
+                <section class="dashboard-card hot-coins-card">
+                    <div class="card-header">
+                        <h3>
+                            <i class="fas fa-fire"></i>
+                            Горячие монеты
+                        </h3>
+                        <span class="update-time" id="hotCoinsUpdate">Обновлено: --:--</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="hot-coins-list" id="hotCoinsList">
+                            <div class="hot-coins-placeholder">
+                                <i class="fas fa-fire"></i>
+                                <p>Загрузка данных...</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Connection Status Modal -->
+    <div class="modal" id="connectionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Проблема с соединением
+                </h3>
+            </div>
+            <div class="modal-body">
+                <p>Не удается подключиться к боту. Проверьте:</p>
+                <ul>
+                    <li>Запущен ли бот</li>
+                    <li>Правильность настроек API</li>
+                    <li>Соединение с интернетом</li>
+                </ul>
+                <div class="error-code">
+                    Код ошибки: <span id="errorCode">TIMEOUT</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="retryConnection">
+                    <i class="fas fa-sync-alt"></i>
+                    Повторить попытку
+                </button>
+                <button class="btn btn-secondary" id="closeConnectionModal">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

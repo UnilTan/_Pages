@@ -246,7 +246,7 @@ class AnalyticsChartManager {
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Производительность торговых сигналов (демо-данные)',
+                        text: 'Производительность торговых сигналов',
                         font: { size: 16, weight: '600' },
                         color: '#1f2937'
                     },

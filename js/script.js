@@ -1092,8 +1092,7 @@ function selectSignalCard(cardElement) {
     cardElement.classList.add('selected');
     selectedSignal = signalType;
     
-    // Show selection feedback
-    showNotification(`Выбран тип сигналов: ${signalType}%`, 'info');
+    // Selection saved without notification
     
     // Add selection animation without breaking the card visibility
     cardElement.style.transform = 'scale(1.05)';
@@ -1328,8 +1327,7 @@ async function initAnalytics() {
     } catch (error) {
         console.error('❌ Ошибка инициализации аналитики:', error);
         
-        // Показываем уведомление пользователю
-        showNotification('Используются демо-данные для аналитики', 'warning');
+        // Демо данные загружены без уведомления
     }
 }
 
@@ -1425,7 +1423,7 @@ function updateDataHealthIndicator(health, lastUpdate) {
         'excellent': 'Отличное качество данных',
         'good': 'Хорошее качество данных',
         'fair': 'Удовлетворительное качество данных', 
-        'poor': 'Демо-данные'
+        'poor': 'Ограниченные данные'
     };
     
     const emoji = healthEmojis[health] || '🔄';
@@ -1463,7 +1461,11 @@ async function refreshAnalytics() {
     console.log('🔄 Ручное обновление аналитики...');
     
     try {
-        if (window.analyticsDataManager && window.analyticsChartManager) {
+        // Используем новую систему реального времени если доступна
+        if (window.realTimeAnalytics) {
+            await window.realTimeAnalytics.updateAllData();
+            showNotification('Данные обновлены в реальном времени!', 'success');
+        } else if (window.analyticsDataManager && window.analyticsChartManager) {
             const metrics = await window.analyticsDataManager.refresh();
             updateAnalyticsMetrics(metrics);
             await window.analyticsChartManager.updateChart();
