@@ -259,17 +259,17 @@
                         <li><i class="fas fa-shield-alt"></i> Автоматическая очистка устаревших данных</li>
                     </ul>
                     <div class="analytics-metrics">
-                        <div class="metric">
-                            <span class="metric-value">85%</span>
+                        <div class="metric" id="winRateMetric">
+                            <span class="metric-value" id="winRateValue">85%</span>
                             <span class="metric-label">Точность сигналов</span>
                         </div>
-                        <div class="metric">
-                            <span class="metric-value">2.3x</span>
+                        <div class="metric" id="avgMultiplierMetric">
+                            <span class="metric-value" id="avgMultiplierValue">2.3x</span>
                             <span class="metric-label">Средняя прибыль</span>
                         </div>
-                        <div class="metric">
-                            <span class="metric-value">24/7</span>
-                            <span class="metric-label">Работа без перерывов</span>
+                        <div class="metric" id="activeSignalsMetric">
+                            <span class="metric-value" id="activeSignalsValue">15</span>
+                            <span class="metric-label">Активные сигналы</span>
                         </div>
                     </div>
                 </div>
@@ -277,6 +277,9 @@
                     <div class="chart-container">
                         <canvas id="performanceChart"></canvas>
                     </div>
+                    <button onclick="refreshAnalytics()" class="btn btn-secondary" style="margin-top: 1rem;">
+                        🔄 Обновить данные
+                    </button>
                 </div>
             </div>
         </div>
@@ -627,6 +630,8 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="js/crypto-data.js"></script>
+    <script src="js/analytics-data.js"></script>
+    <script src="js/analytics-chart.js"></script>
     <script src="js/trading-card-updater.js"></script>
     <script src="js/script.js"></script>
 </body>

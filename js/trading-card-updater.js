@@ -276,17 +276,20 @@ class TradingCardUpdater {
             indicator.className = 'last-update';
             indicator.style.cssText = `
                 position: absolute;
-                top: 10px;
-                left: 10px;
-                font-size: 10px;
+                bottom: 8px;
+                right: 8px;
+                font-size: 8px;
                 color: #666;
-                background: rgba(255, 255, 255, 0.9);
-                padding: 4px 8px;
-                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.7);
+                padding: 2px 6px;
+                border-radius: 8px;
                 font-weight: 500;
-                z-index: 10;
+                z-index: 5;
                 transition: all 0.3s ease;
-                border: 1px solid rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                backdrop-filter: blur(4px);
+                max-width: 60px;
+                text-align: center;
             `;
             this.cardElement.appendChild(indicator);
         }
@@ -297,14 +300,14 @@ class TradingCardUpdater {
         
         // Анимация индикатора
         const isRealData = data && !data.isFallback;
-        indicator.style.backgroundColor = isRealData ? 'rgba(76, 205, 196, 0.9)' : 'rgba(255, 193, 7, 0.9)';
+        indicator.style.backgroundColor = isRealData ? 'rgba(76, 205, 196, 0.8)' : 'rgba(255, 193, 7, 0.8)';
         indicator.style.color = 'white';
         indicator.style.borderColor = isRealData ? '#4ECDC4' : '#FFC107';
         
         setTimeout(() => {
-            indicator.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+            indicator.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
             indicator.style.color = '#666';
-            indicator.style.borderColor = 'rgba(0, 0, 0, 0.1)';
+            indicator.style.borderColor = 'rgba(0, 0, 0, 0.05)';
         }, 2000);
     }
 }

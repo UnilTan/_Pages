@@ -1234,9 +1234,220 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize real-time data after all enhancements
     setTimeout(initRealTimeData, 1000);
     
+    // Initialize analytics with real trade data
+    setTimeout(initAnalytics, 1500);
+    
     console.log('🎉 Все улучшения интерфейса загружены!');
     console.log('🎯 Система выбора сигналов активирована!');
+    console.log('📊 Аналитика торговых результатов активирована!');
 });
+
+/**
+ * 📊 Инициализация аналитики с реальными торговыми данными
+ */
+async function initAnalytics() {
+    try {
+        console.log('🔄 Инициализация аналитики...');
+        console.log('🔍 Проверка доступности AnalyticsDataManager:', typeof AnalyticsDataManager);
+        console.log('🔍 Проверка доступности AnalyticsChartManager:', typeof AnalyticsChartManager);
+        
+        // Проверяем наличие необходимых классов
+        if (typeof AnalyticsDataManager === 'undefined') {
+            console.warn('⚠️ AnalyticsDataManager не найден, используем статические данные');
+            return;
+        }
+        
+        if (typeof AnalyticsChartManager === 'undefined') {
+            console.warn('⚠️ AnalyticsChartManager не найден, график не будет обновлен');
+            return;
+        }
+        
+        // Инициализируем менеджер данных
+        const dataManager = new AnalyticsDataManager();
+        await dataManager.loadTradeResults();
+        
+        // Получаем реальные метрики
+        const metrics = dataManager.getMetrics();
+        console.log('📈 Метрики загружены:', metrics);
+        
+        // Обновляем метрики в интерфейсе
+        updateAnalyticsMetrics(metrics);
+        
+        // Инициализируем график
+        const chartManager = new AnalyticsChartManager();
+        await chartManager.initializeChart();
+        
+        // Сохраняем ссылки для периодических обновлений
+        window.analyticsDataManager = dataManager;
+        window.analyticsChartManager = chartManager;
+        
+        // Настраиваем периодическое обновление (каждые 5 минут)
+        setInterval(async () => {
+            try {
+                const updatedMetrics = await dataManager.refresh();
+                updateAnalyticsMetrics(updatedMetrics);
+                await chartManager.updateChart();
+                console.log('🔄 Аналитика обновлена автоматически');
+            } catch (error) {
+                console.warn('⚠️ Ошибка автоматического обновления аналитики:', error);
+            }
+        }, 5 * 60 * 1000); // 5 минут
+        
+        console.log('✅ Аналитика успешно инициализирована');
+        
+    } catch (error) {
+        console.error('❌ Ошибка инициализации аналитики:', error);
+        
+        // Показываем уведомление пользователю
+        showNotification('Используются демо-данные для аналитики', 'warning');
+    }
+}
+
+/**
+ * 🔄 Обновляет метрики аналитики в интерфейсе
+ */
+function updateAnalyticsMetrics(metrics) {
+    try {
+        console.log('📊 Обновление метрик с данными:', metrics);
+        
+        // Обновляем процент успеха
+        const winRateElement = document.getElementById('winRateValue');
+        console.log('🎯 WinRate элемент:', winRateElement, 'Значение:', metrics.winRate);
+        if (winRateElement && metrics.winRate !== undefined) {
+            animateValue(winRateElement, parseFloat(winRateElement.textContent) || 0, metrics.winRate, '%');
+        }
+        
+        // Обновляем средний мультипликатор
+        const avgMultiplierElement = document.getElementById('avgMultiplierValue');
+        if (avgMultiplierElement && metrics.avgMultiplier !== undefined) {
+            animateValue(avgMultiplierElement, parseFloat(avgMultiplierElement.textContent) || 0, metrics.avgMultiplier, 'x');
+        }
+        
+        // Обновляем количество активных сигналов
+        const activeSignalsElement = document.getElementById('activeSignalsValue');
+        if (activeSignalsElement && metrics.activeSignals !== undefined) {
+            animateValue(activeSignalsElement, parseInt(activeSignalsElement.textContent) || 0, metrics.activeSignals, '');
+        }
+        
+        // Обновляем заголовок с информацией о качестве данных
+        updateDataHealthIndicator(metrics.dataHealth, metrics.lastUpdate);
+        
+        console.log('📊 Метрики интерфейса обновлены');
+        
+    } catch (error) {
+        console.error('❌ Ошибка обновления метрик:', error);
+    }
+}
+
+/**
+ * 🎭 Анимирует изменение числовых значений
+ */
+function animateValue(element, start, end, suffix = '') {
+    const duration = 2000; // 2 секунды
+    const range = end - start;
+    const increment = range / (duration / 16); // 60 FPS
+    let current = start;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        
+        if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+            current = end;
+            clearInterval(timer);
+        }
+        
+        // Форматируем значение в зависимости от суффикса
+        let displayValue;
+        if (suffix === '%') {
+            displayValue = Math.round(current * 10) / 10;
+        } else if (suffix === 'x') {
+            displayValue = Math.round(current * 10) / 10;
+        } else {
+            displayValue = Math.round(current);
+        }
+        
+        element.textContent = displayValue + suffix;
+        
+        // Добавляем визуальный эффект обновления
+        element.style.transform = 'scale(1.05)';
+        setTimeout(() => {
+            element.style.transform = 'scale(1)';
+        }, 150);
+        
+    }, 16);
+}
+
+/**
+ * 🏥 Обновляет индикатор качества данных
+ */
+function updateDataHealthIndicator(health, lastUpdate) {
+    const section = document.querySelector('.analytics .section-subtitle');
+    if (!section) return;
+    
+    const healthEmojis = {
+        'excellent': '🟢',
+        'good': '🟡', 
+        'fair': '🟠',
+        'poor': '🔴'
+    };
+    
+    const healthTexts = {
+        'excellent': 'Отличное качество данных',
+        'good': 'Хорошее качество данных',
+        'fair': 'Удовлетворительное качество данных', 
+        'poor': 'Демо-данные'
+    };
+    
+    const emoji = healthEmojis[health] || '🔄';
+    const text = healthTexts[health] || 'Загрузка данных';
+    
+    let updateText = '';
+    if (lastUpdate) {
+        const timeAgo = getTimeAgo(lastUpdate);
+        updateText = ` • Обновлено ${timeAgo}`;
+    }
+    
+    section.innerHTML = `${emoji} ${text}${updateText}`;
+}
+
+/**
+ * ⏰ Форматирует время "назад"
+ */
+function getTimeAgo(date) {
+    const now = new Date();
+    const diffMs = now - date;
+    const diffMins = Math.floor(diffMs / 60000);
+    const diffHours = Math.floor(diffMs / 3600000);
+    
+    if (diffMins < 1) return 'только что';
+    if (diffMins < 60) return `${diffMins} мин назад`;
+    if (diffHours < 24) return `${diffHours} ч назад`;
+    
+    return date.toLocaleDateString('ru-RU');
+}
+
+/**
+ * 🔄 Функция для ручного обновления аналитики (для тестирования)
+ */
+async function refreshAnalytics() {
+    console.log('🔄 Ручное обновление аналитики...');
+    
+    try {
+        if (window.analyticsDataManager && window.analyticsChartManager) {
+            const metrics = await window.analyticsDataManager.refresh();
+            updateAnalyticsMetrics(metrics);
+            await window.analyticsChartManager.updateChart();
+            showNotification('Аналитика обновлена!', 'success');
+        } else {
+            // Если менеджеры не инициализированы, запускаем инициализацию
+            await initAnalytics();
+            showNotification('Аналитика переинициализирована!', 'info');
+        }
+    } catch (error) {
+        console.error('❌ Ошибка обновления аналитики:', error);
+        showNotification('Ошибка обновления аналитики', 'error');
+    }
+}
 
 // Service Worker Registration (for PWA capabilities)
 if ('serviceWorker' in navigator) {

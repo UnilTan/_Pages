@@ -1,0 +1,1267 @@
+{
+  "active_signals": {
+    "HIFI_USDT_1758177643": {
+      "symbol": "HIFI_USDT",
+      "entry_price": 0.1848,
+      "targets": [
+        0.194,
+        0.2033,
+        0.2181
+      ],
+      "stop_loss": 0.1793,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758177643,
+      "status": "active",
+      "hit_targets": [
+        0
+      ]
+    },
+    "BAKE_USDT_1758177675": {
+      "symbol": "BAKE_USDT",
+      "entry_price": 0.0557,
+      "targets": [
+        0.0585,
+        0.0613,
+        0.0657
+      ],
+      "stop_loss": 0.054,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758177675,
+      "status": "active",
+      "hit_targets": [
+        0,
+        1
+      ]
+    },
+    "AIO_USDT_1758181340": {
+      "symbol": "AIO_USDT",
+      "entry_price": 0.18148,
+      "targets": [
+        0.1906,
+        0.1996,
+        0.2141
+      ],
+      "stop_loss": 0.176,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758181340,
+      "status": "active",
+      "hit_targets": [
+        0,
+        1
+      ]
+    },
+    "MAIGA_USDT_1758182889": {
+      "symbol": "MAIGA_USDT",
+      "entry_price": 0.07551,
+      "targets": [
+        0.0717,
+        0.068,
+        0.0619
+      ],
+      "stop_loss": 0.0778,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758182889,
+      "status": "active",
+      "hit_targets": [
+        0,
+        1
+      ]
+    },
+    "TST_USDT_1758182920": {
+      "symbol": "TST_USDT",
+      "entry_price": 0.05878,
+      "targets": [
+        0.0558,
+        0.0529,
+        0.0482
+      ],
+      "stop_loss": 0.0605,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758182920,
+      "status": "active",
+      "hit_targets": [
+        0,
+        1
+      ]
+    },
+    "VLR_USDT_1758201258": {
+      "symbol": "VLR_USDT",
+      "entry_price": 0.02092,
+      "targets": [
+        0.0199,
+        0.0188,
+        0.0172
+      ],
+      "stop_loss": 0.0215,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758201258,
+      "status": "active",
+      "hit_targets": [
+        0
+      ]
+    },
+    "BOOM_USDT_1758204501": {
+      "symbol": "BOOM_USDT",
+      "entry_price": 0.00943,
+      "targets": [
+        0.009,
+        0.0085,
+        0.0077
+      ],
+      "stop_loss": 0.0097,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758204501,
+      "status": "active",
+      "hit_targets": []
+    },
+    "BB_USDT_1758208605": {
+      "symbol": "BB_USDT",
+      "entry_price": 0.19652,
+      "targets": [
+        0.1867,
+        0.1769,
+        0.1611
+      ],
+      "stop_loss": 0.2024,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758208605,
+      "status": "active",
+      "hit_targets": []
+    },
+    "MAIGA_USDT_1758208778": {
+      "symbol": "MAIGA_USDT",
+      "entry_price": 0.07154,
+      "targets": [
+        0.0751,
+        0.0787,
+        0.0844
+      ],
+      "stop_loss": 0.0694,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758208778,
+      "status": "active",
+      "hit_targets": [
+        0
+      ]
+    },
+    "BRIC_USDT_1758209961": {
+      "symbol": "BRIC_USDT",
+      "entry_price": 0.00836,
+      "targets": [
+        0.0088,
+        0.0092,
+        0.0099
+      ],
+      "stop_loss": 0.0081,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758209961,
+      "status": "active",
+      "hit_targets": [
+        0
+      ]
+    },
+    "LUNANEW_USDT_1758211300": {
+      "symbol": "LUNANEW_USDT",
+      "entry_price": 0.1649,
+      "targets": [
+        0.1567,
+        0.1484,
+        0.1352
+      ],
+      "stop_loss": 0.1698,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758211300,
+      "status": "active",
+      "hit_targets": []
+    },
+    "AIO_USDT_1758211404": {
+      "symbol": "AIO_USDT",
+      "entry_price": 0.19422,
+      "targets": [
+        0.1845,
+        0.1748,
+        0.1593
+      ],
+      "stop_loss": 0.2,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758211404,
+      "status": "active",
+      "hit_targets": []
+    },
+    "FTT_USDT_1758211656": {
+      "symbol": "FTT_USDT",
+      "entry_price": 0.983,
+      "targets": [
+        0.9338,
+        0.8847,
+        0.8061
+      ],
+      "stop_loss": 1.0125,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758211656,
+      "status": "active",
+      "hit_targets": []
+    },
+    "DEBT_USDT_1758211976": {
+      "symbol": "DEBT_USDT",
+      "entry_price": 0.001339,
+      "targets": [
+        0.0014,
+        0.0015,
+        0.0016
+      ],
+      "stop_loss": 0.0013,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758211976,
+      "status": "active",
+      "hit_targets": [
+        0
+      ]
+    },
+    "EXO_USDT_1758212977": {
+      "symbol": "EXO_USDT",
+      "entry_price": 3.62,
+      "targets": [
+        3.439,
+        3.258,
+        2.9684
+      ],
+      "stop_loss": 3.7286,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758212977,
+      "status": "active",
+      "hit_targets": []
+    },
+    "KMNO_USDT_1758213159": {
+      "symbol": "KMNO_USDT",
+      "entry_price": 0.09982,
+      "targets": [
+        0.0948,
+        0.0898,
+        0.0819
+      ],
+      "stop_loss": 0.1028,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758213159,
+      "status": "active",
+      "hit_targets": []
+    },
+    "XDOG_USDT_1758213381": {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.03747,
+      "targets": [
+        0.0356,
+        0.0337,
+        0.0307
+      ],
+      "stop_loss": 0.0386,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758213381,
+      "status": "active",
+      "hit_targets": []
+    }
+  },
+  "completed_trades": [
+    {
+      "symbol": "BAGWORK_USDT",
+      "entry_price": 0.00473,
+      "targets": [
+        0.0045,
+        0.0043,
+        0.0039
+      ],
+      "stop_loss": 0.0049,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758177887,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -5.07,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.00497,
+      "signal_id": "BAGWORK_USDT_1758177887",
+      "completed_at": 1758177918
+    },
+    {
+      "symbol": "EXO_USDT",
+      "entry_price": 3.58,
+      "targets": [
+        3.759,
+        3.938,
+        4.2244
+      ],
+      "stop_loss": 3.4726,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758177738,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -3.35,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 3.46,
+      "signal_id": "EXO_USDT_1758177738",
+      "completed_at": 1758178057
+    },
+    {
+      "symbol": "MAIGA_USDT",
+      "entry_price": 0.0846,
+      "targets": [
+        0.0888,
+        0.0931,
+        0.0998
+      ],
+      "stop_loss": 0.0821,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758177957,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -5.54,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.07991,
+      "signal_id": "MAIGA_USDT_1758177957",
+      "completed_at": 1758178282
+    },
+    {
+      "symbol": "TST_USDT",
+      "entry_price": 0.05586,
+      "targets": [
+        0.0531,
+        0.0503,
+        0.0458
+      ],
+      "stop_loss": 0.0575,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758179386,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -3.22,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.05766,
+      "signal_id": "TST_USDT_1758179386",
+      "completed_at": 1758179594
+    },
+    {
+      "symbol": "MAIGA_USDT",
+      "entry_price": 0.08346,
+      "targets": [
+        0.0793,
+        0.0751,
+        0.0684
+      ],
+      "stop_loss": 0.086,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758179540,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -3.65,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.08651,
+      "signal_id": "MAIGA_USDT_1758179540",
+      "completed_at": 1758180223
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.03264,
+      "targets": [
+        0.0343,
+        0.0359,
+        0.0385
+      ],
+      "stop_loss": 0.0317,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758180008,
+      "status": "active",
+      "hit_targets": [
+        0
+      ],
+      "pnl_percent": -2.97,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.03167,
+      "signal_id": "XDOG_USDT_1758180008",
+      "completed_at": 1758180580
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.03399,
+      "targets": [
+        0.0323,
+        0.0306,
+        0.0279
+      ],
+      "stop_loss": 0.035,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758180457,
+      "status": "active",
+      "hit_targets": [
+        0
+      ],
+      "pnl_percent": -2.97,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.035,
+      "signal_id": "XDOG_USDT_1758180457",
+      "completed_at": 1758180727
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.03451,
+      "targets": [
+        0.0328,
+        0.0311,
+        0.0283
+      ],
+      "stop_loss": 0.0355,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758180719,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -8.35,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.03739,
+      "signal_id": "XDOG_USDT_1758180719",
+      "completed_at": 1758180774
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.03167,
+      "targets": [
+        0.0333,
+        0.0348,
+        0.0374
+      ],
+      "stop_loss": 0.0307,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758180580,
+      "status": "active",
+      "hit_targets": [
+        0,
+        1,
+        2
+      ],
+      "pnl_percent": 22.7,
+      "success": true,
+      "exit_reason": "target_3",
+      "exit_price": 0.03886,
+      "signal_id": "XDOG_USDT_1758180580",
+      "completed_at": 1758180782
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.0356,
+      "targets": [
+        0.0377,
+        0.0399,
+        0.0427
+      ],
+      "stop_loss": 0.0342,
+      "direction": -1,
+      "quality": "ХОРОШИЙ",
+      "timestamp": 1758180906,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -6.01,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.03346,
+      "signal_id": "XDOG_USDT_1758180906",
+      "completed_at": 1758180913
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.03625,
+      "targets": [
+        0.0344,
+        0.0326,
+        0.0297
+      ],
+      "stop_loss": 0.0373,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758181039,
+      "status": "active",
+      "hit_targets": [
+        0
+      ],
+      "pnl_percent": -3.97,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.03769,
+      "signal_id": "XDOG_USDT_1758181039",
+      "completed_at": 1758181070
+    },
+    {
+      "symbol": "BAGWORK_USDT",
+      "entry_price": 0.00475,
+      "targets": [
+        0.005,
+        0.0052,
+        0.0056
+      ],
+      "stop_loss": 0.0046,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758178743,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -4.42,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.00454,
+      "signal_id": "BAGWORK_USDT_1758178743",
+      "completed_at": 1758181200
+    },
+    {
+      "symbol": "MAIGA_USDT",
+      "entry_price": 0.08741,
+      "targets": [
+        0.083,
+        0.0787,
+        0.0717
+      ],
+      "stop_loss": 0.09,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758180790,
+      "status": "active",
+      "hit_targets": [
+        0,
+        1,
+        2
+      ],
+      "pnl_percent": 18.16,
+      "success": true,
+      "exit_reason": "target_3",
+      "exit_price": 0.07154,
+      "signal_id": "MAIGA_USDT_1758180790",
+      "completed_at": 1758182764
+    },
+    {
+      "symbol": "BROCCOLI_USDT",
+      "entry_price": 0.03425,
+      "targets": [
+        0.0325,
+        0.0308,
+        0.0281
+      ],
+      "stop_loss": 0.0353,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758182256,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -3.09,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.03531,
+      "signal_id": "BROCCOLI_USDT_1758182256",
+      "completed_at": 1758182834
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.03513,
+      "targets": [
+        0.0334,
+        0.0316,
+        0.0288
+      ],
+      "stop_loss": 0.0362,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758181509,
+      "status": "active",
+      "hit_targets": [
+        0
+      ],
+      "pnl_percent": -8.31,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.03805,
+      "signal_id": "XDOG_USDT_1758181509",
+      "completed_at": 1758200948
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.03312,
+      "targets": [
+        0.0351,
+        0.0371,
+        0.0397
+      ],
+      "stop_loss": 0.0318,
+      "direction": -1,
+      "quality": "ХОРОШИЙ",
+      "timestamp": 1758181185,
+      "status": "active",
+      "hit_targets": [
+        0,
+        1,
+        2
+      ],
+      "pnl_percent": 20.32,
+      "success": true,
+      "exit_reason": "target_3",
+      "exit_price": 0.03985,
+      "signal_id": "XDOG_USDT_1758181185",
+      "completed_at": 1758201365
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.0407,
+      "targets": [
+        0.0387,
+        0.0366,
+        0.0334
+      ],
+      "stop_loss": 0.0419,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758201373,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -9.9,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.04473,
+      "signal_id": "XDOG_USDT_1758201373",
+      "completed_at": 1758201404
+    },
+    {
+      "symbol": "MAIGA_USDT",
+      "entry_price": 0.07154,
+      "targets": [
+        0.0751,
+        0.0787,
+        0.0844
+      ],
+      "stop_loss": 0.0694,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758182764,
+      "status": "active",
+      "hit_targets": [
+        0
+      ],
+      "pnl_percent": -3.17,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.06927,
+      "signal_id": "MAIGA_USDT_1758182764",
+      "completed_at": 1758201506
+    },
+    {
+      "symbol": "STBL_USDT",
+      "entry_price": 0.172,
+      "targets": [
+        0.1634,
+        0.1548,
+        0.141
+      ],
+      "stop_loss": 0.1772,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758201437,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -3.35,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.17776,
+      "signal_id": "STBL_USDT_1758201437",
+      "completed_at": 1758201560
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.04062,
+      "targets": [
+        0.0431,
+        0.0455,
+        0.0487
+      ],
+      "stop_loss": 0.039,
+      "direction": -1,
+      "quality": "ХОРОШИЙ",
+      "timestamp": 1758201522,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -5.29,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.03847,
+      "signal_id": "XDOG_USDT_1758201522",
+      "completed_at": 1758201569
+    },
+    {
+      "symbol": "STREAMER_USDT",
+      "entry_price": 0.00407,
+      "targets": [
+        0.0039,
+        0.0037,
+        0.0033
+      ],
+      "stop_loss": 0.0042,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758202213,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -3.93,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.00423,
+      "signal_id": "STREAMER_USDT_1758202213",
+      "completed_at": 1758202361
+    },
+    {
+      "symbol": "STBL_USDT",
+      "entry_price": 0.17884,
+      "targets": [
+        0.1878,
+        0.1967,
+        0.211
+      ],
+      "stop_loss": 0.1735,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758202212,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -3.13,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.17324,
+      "signal_id": "STBL_USDT_1758202212",
+      "completed_at": 1758202604
+    },
+    {
+      "symbol": "BARD_USDT",
+      "entry_price": 1.09,
+      "targets": [
+        1.1445,
+        1.199,
+        1.2862
+      ],
+      "stop_loss": 1.0573,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758201718,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -4.04,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 1.046,
+      "signal_id": "BARD_USDT_1758201718",
+      "completed_at": 1758203136
+    },
+    {
+      "symbol": "STREAMER_USDT",
+      "entry_price": 0.00397,
+      "targets": [
+        0.0042,
+        0.0044,
+        0.0047
+      ],
+      "stop_loss": 0.0039,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758202525,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -1.76,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.0039,
+      "signal_id": "STREAMER_USDT_1758202525",
+      "completed_at": 1758203152
+    },
+    {
+      "symbol": "BAGWORK_USDT",
+      "entry_price": 0.00446,
+      "targets": [
+        0.0047,
+        0.0049,
+        0.0053
+      ],
+      "stop_loss": 0.0043,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758202401,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -4.26,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.00427,
+      "signal_id": "BAGWORK_USDT_1758202401",
+      "completed_at": 1758205431
+    },
+    {
+      "symbol": "FTT_USDT",
+      "entry_price": 0.855,
+      "targets": [
+        0.8122,
+        0.7695,
+        0.7011
+      ],
+      "stop_loss": 0.8806,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758206116,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -3.27,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.883,
+      "signal_id": "FTT_USDT_1758206116",
+      "completed_at": 1758206148
+    },
+    {
+      "symbol": "FTT_USDT",
+      "entry_price": 0.959,
+      "targets": [
+        0.9015,
+        0.8439,
+        0.7672
+      ],
+      "stop_loss": 0.9974,
+      "direction": 1,
+      "quality": "ХОРОШИЙ",
+      "timestamp": 1758206236,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -5.53,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 1.012,
+      "signal_id": "FTT_USDT_1758206236",
+      "completed_at": 1758206260
+    },
+    {
+      "symbol": "FTT_USDT",
+      "entry_price": 1.0,
+      "targets": [
+        0.94,
+        0.88,
+        0.8
+      ],
+      "stop_loss": 1.04,
+      "direction": 1,
+      "quality": "ХОРОШИЙ",
+      "timestamp": 1758206268,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -4.7,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 1.047,
+      "signal_id": "FTT_USDT_1758206268",
+      "completed_at": 1758206292
+    },
+    {
+      "symbol": "FTT_USDT",
+      "entry_price": 1.1,
+      "targets": [
+        1.045,
+        0.99,
+        0.902
+      ],
+      "stop_loss": 1.133,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758206544,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -3.55,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 1.139,
+      "signal_id": "FTT_USDT_1758206544",
+      "completed_at": 1758206584
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.03632,
+      "targets": [
+        0.0392,
+        0.0418,
+        0.0454
+      ],
+      "stop_loss": 0.0345,
+      "direction": -1,
+      "quality": "ОТЛИЧНЫЙ",
+      "timestamp": 1758201600,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -5.31,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.03439,
+      "signal_id": "XDOG_USDT_1758201600",
+      "completed_at": 1758206686
+    },
+    {
+      "symbol": "KIND_USDT",
+      "entry_price": 0.00742,
+      "targets": [
+        0.0078,
+        0.0082,
+        0.0088
+      ],
+      "stop_loss": 0.0072,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758203380,
+      "status": "active",
+      "hit_targets": [
+        0
+      ],
+      "pnl_percent": -3.5,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.00716,
+      "signal_id": "KIND_USDT_1758203380",
+      "completed_at": 1758206726
+    },
+    {
+      "symbol": "FTT_USDT",
+      "entry_price": 1.115,
+      "targets": [
+        1.1819,
+        1.2488,
+        1.338
+      ],
+      "stop_loss": 1.0704,
+      "direction": -1,
+      "quality": "ХОРОШИЙ",
+      "timestamp": 1758206718,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -4.04,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 1.07,
+      "signal_id": "FTT_USDT_1758206718",
+      "completed_at": 1758206734
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.03401,
+      "targets": [
+        0.0357,
+        0.0374,
+        0.0401
+      ],
+      "stop_loss": 0.033,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758206694,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -3.06,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.03297,
+      "signal_id": "XDOG_USDT_1758206694",
+      "completed_at": 1758207066
+    },
+    {
+      "symbol": "FTT_USDT",
+      "entry_price": 1.093,
+      "targets": [
+        1.1476,
+        1.2023,
+        1.2897
+      ],
+      "stop_loss": 1.0602,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758206964,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -3.29,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 1.057,
+      "signal_id": "FTT_USDT_1758206964",
+      "completed_at": 1758207066
+    },
+    {
+      "symbol": "BAGWORK_USDT",
+      "entry_price": 0.00431,
+      "targets": [
+        0.0045,
+        0.0047,
+        0.0051
+      ],
+      "stop_loss": 0.0042,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758181760,
+      "status": "active",
+      "hit_targets": [
+        0,
+        1
+      ],
+      "pnl_percent": -3.25,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.00417,
+      "signal_id": "BAGWORK_USDT_1758181760",
+      "completed_at": 1758207168
+    },
+    {
+      "symbol": "FTT_USDT",
+      "entry_price": 1.02,
+      "targets": [
+        1.0812,
+        1.1424,
+        1.224
+      ],
+      "stop_loss": 0.9792,
+      "direction": -1,
+      "quality": "ХОРОШИЙ",
+      "timestamp": 1758206419,
+      "status": "active",
+      "hit_targets": [
+        0,
+        1
+      ],
+      "pnl_percent": -4.9,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.97,
+      "signal_id": "FTT_USDT_1758206419",
+      "completed_at": 1758207652
+    },
+    {
+      "symbol": "BAGWORK_USDT",
+      "entry_price": 0.00449,
+      "targets": [
+        0.0043,
+        0.004,
+        0.0037
+      ],
+      "stop_loss": 0.0046,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758207517,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -2.45,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.0046,
+      "signal_id": "BAGWORK_USDT_1758207517",
+      "completed_at": 1758208834
+    },
+    {
+      "symbol": "FTT_USDT",
+      "entry_price": 1.168,
+      "targets": [
+        1.1096,
+        1.0512,
+        0.9578
+      ],
+      "stop_loss": 1.203,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758206844,
+      "status": "active",
+      "hit_targets": [
+        0,
+        1,
+        2
+      ],
+      "pnl_percent": 18.15,
+      "success": true,
+      "exit_reason": "target_3",
+      "exit_price": 0.956,
+      "signal_id": "FTT_USDT_1758206844",
+      "completed_at": 1758208999
+    },
+    {
+      "symbol": "HIFI_USDT",
+      "entry_price": 0.19056,
+      "targets": [
+        0.202,
+        0.2134,
+        0.2287
+      ],
+      "stop_loss": 0.1829,
+      "direction": -1,
+      "quality": "ХОРОШИЙ",
+      "timestamp": 1758177722,
+      "status": "active",
+      "hit_targets": [
+        0
+      ],
+      "pnl_percent": -4.29,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.18238,
+      "signal_id": "HIFI_USDT_1758177722",
+      "completed_at": 1758209524
+    },
+    {
+      "symbol": "BAGWORK_USDT",
+      "entry_price": 0.00413,
+      "targets": [
+        0.0043,
+        0.0045,
+        0.0049
+      ],
+      "stop_loss": 0.004,
+      "direction": -1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758209721,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -5.08,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.00392,
+      "signal_id": "BAGWORK_USDT_1758209721",
+      "completed_at": 1758209817
+    },
+    {
+      "symbol": "EXO_USDT",
+      "entry_price": 3.3,
+      "targets": [
+        3.135,
+        2.97,
+        2.706
+      ],
+      "stop_loss": 3.399,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758207968,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -3.64,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 3.42,
+      "signal_id": "EXO_USDT_1758207968",
+      "completed_at": 1758209841
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.0378,
+      "targets": [
+        0.0355,
+        0.0333,
+        0.0302
+      ],
+      "stop_loss": 0.0393,
+      "direction": 1,
+      "quality": "ХОРОШИЙ",
+      "timestamp": 1758201693,
+      "status": "active",
+      "hit_targets": [
+        0,
+        1
+      ],
+      "pnl_percent": -9.87,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.04153,
+      "signal_id": "XDOG_USDT_1758201693",
+      "completed_at": 1758211704
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.03915,
+      "targets": [
+        0.0372,
+        0.0352,
+        0.0321
+      ],
+      "stop_loss": 0.0403,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758211697,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -6.08,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.04153,
+      "signal_id": "XDOG_USDT_1758211697",
+      "completed_at": 1758211704
+    },
+    {
+      "symbol": "XDOG_USDT",
+      "entry_price": 0.03713,
+      "targets": [
+        0.0394,
+        0.0416,
+        0.0446
+      ],
+      "stop_loss": 0.0356,
+      "direction": -1,
+      "quality": "ХОРОШИЙ",
+      "timestamp": 1758211824,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -4.74,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.03537,
+      "signal_id": "XDOG_USDT_1758211824",
+      "completed_at": 1758212134
+    },
+    {
+      "symbol": "STBL_USDT",
+      "entry_price": 0.18369,
+      "targets": [
+        0.1745,
+        0.1653,
+        0.1506
+      ],
+      "stop_loss": 0.1892,
+      "direction": 1,
+      "quality": "СРЕДНИЙ",
+      "timestamp": 1758211308,
+      "status": "active",
+      "hit_targets": [],
+      "pnl_percent": -3.16,
+      "success": false,
+      "exit_reason": "stop_loss",
+      "exit_price": 0.1895,
+      "signal_id": "STBL_USDT_1758211308",
+      "completed_at": 1758212419
+    }
+  ]
+}
