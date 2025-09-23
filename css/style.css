@@ -1812,7 +1812,7 @@ section .container {
 .footer-brand .brand:hover i {
     transform: scale(1.1) rotate(5deg);
     animation: none;
-    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
 }
 
 .footer-brand p {

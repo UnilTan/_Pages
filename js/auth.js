@@ -430,138 +430,18 @@ class AuthManager {
     async handleTelegramAuth() {
         console.log('📱 Авторизация через Telegram...');
         
-        // Показываем модальное окно с инструкциями
-        this.showTelegramVerificationModal();
-    }
-    
-    showTelegramVerificationModal() {
-        const modal = document.createElement('div');
-        modal.className = 'telegram-verification-modal';
-        modal.innerHTML = `
-            <div class="verification-modal-content">
-                <div class="verification-header">
-                    <h3><i class="fab fa-telegram"></i> Авторизация через Telegram</h3>
-                    <button class="close-verification">&times;</button>
-                </div>
-                <div class="verification-body">
-                    <div class="verification-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Откройте Telegram бота</h4>
-                            <p>Перейдите в бота @CryptoWatchMexc_bot и нажмите /start</p>
-                            <a href="https://t.me/DUMPBest_bot" target="_blank" class="telegram-link">
-                                <i class="fab fa-telegram"></i> Открыть бота
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="verification-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Получите код верификации</h4>
-                            <p>Отправьте команду <code>/verify</code> и получите 6-значный код</p>
-                        </div>
-                    </div>
-                    
-                    <div class="verification-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Введите код</h4>
-                            <div class="verification-code-input">
-                                <input type="text" id="verificationCode" placeholder="000000" maxlength="6" class="code-input">
-                                <button id="verifyCodeBtn" class="verify-btn">
-                                    <i class="fas fa-check"></i> Подтвердить
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
+        this.showNotification('Функция в разработке', 'info');
         
-        document.body.appendChild(modal);
-        
-        // Анимация появления
-        setTimeout(() => modal.classList.add('show'), 10);
-        
-        // Обработчики
-        const closeBtn = modal.querySelector('.close-verification');
-        const verifyBtn = modal.querySelector('#verifyCodeBtn');
-        const codeInput = modal.querySelector('#verificationCode');
-        
-        closeBtn.addEventListener('click', () => this.closeTelegramModal(modal));
-        verifyBtn.addEventListener('click', () => this.verifyTelegramCode(modal, codeInput.value));
-        
-        // Автоматическая проверка при вводе 6 символов
-        codeInput.addEventListener('input', (e) => {
-            const value = e.target.value.replace(/\D/g, '');
-            e.target.value = value;
-            
-            if (value.length === 6) {
-                this.verifyTelegramCode(modal, value);
-            }
-        });
-        
-        // Закрытие по клику вне модального окна
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                this.closeTelegramModal(modal);
-            }
-        });
-    }
-    
-    async verifyTelegramCode(modal, code) {
-        if (!code || code.length !== 6) {
-            this.showNotification('Введите 6-значный код', 'error');
-            return;
-        }
-        
-        const verifyBtn = modal.querySelector('#verifyCodeBtn');
-        const originalText = verifyBtn.innerHTML;
-        
-        verifyBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Проверка...';
-        verifyBtn.disabled = true;
-        
-        try {
-            // Имитация проверки кода
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            
-            // Проверка кода верификации
-            if (code === '123456' || Math.random() > 0.3) {
-                const telegramUser = {
-                    id: 'tg_' + Date.now(),
-                    name: 'Telegram User',
-                    email: 'telegram@verified.com',
-                    telegram: '@verified_user',
-                    provider: 'telegram',
-                    verified: true
-                };
-                
-                const authData = {
-                    user: telegramUser,
-                    token: this.generateToken(telegramUser.id),
-                    expiresIn: 30 * 24 * 60 * 60 // 30 дней
-                };
-                
-                this.closeTelegramModal(modal);
-                this.handleAuthSuccess(authData);
-            } else {
-                throw new Error('Неверный код');
-            }
-        } catch (error) {
-            this.showNotification('Неверный код верификации', 'error');
-            verifyBtn.innerHTML = originalText;
-            verifyBtn.disabled = false;
-        }
-    }
-    
-    closeTelegramModal(modal) {
-        modal.classList.remove('show');
-        setTimeout(() => {
-            if (modal.parentNode) {
-                modal.parentNode.removeChild(modal);
-            }
-        }, 300);
+        // TODO: Интеграция с Telegram Widget
+        // const telegramData = await this.getTelegramAuthData();
+        // if (telegramData) {
+        //     const response = await this.makeAuthRequest('/telegram-auth', telegramData);
+        //     if (response.success) {
+        //         this.handleAuthSuccess(response.data);
+        //     } else {
+        //         this.handleAuthError(response.error);
+        //     }
+        // }
     }
 
     showFieldError(fieldId, message) {
@@ -614,103 +494,22 @@ class AuthManager {
             this.loadingOverlay?.classList.remove('show');
         }
         
-        // Блокируем/разблокируем формы более аккуратно
+        // Блокируем/разблокируем формы
         const forms = document.querySelectorAll('.auth-form');
         forms.forEach(form => {
-            const inputs = form.querySelectorAll('input');
-            const buttons = form.querySelectorAll('button[type="submit"]');
-            
+            const inputs = form.querySelectorAll('input, button');
             inputs.forEach(input => {
                 input.disabled = loading;
-                if (loading) {
-                    input.classList.add('loading');
-                } else {
-                    input.classList.remove('loading');
-                }
-            });
-            
-            buttons.forEach(button => {
-                button.disabled = loading;
-                if (loading) {
-                    button.classList.add('loading');
-                    const icon = button.querySelector('i');
-                    if (icon) {
-                        icon.className = 'fas fa-spinner fa-spin';
-                    }
-                } else {
-                    button.classList.remove('loading');
-                    const icon = button.querySelector('i');
-                    if (icon && button.id === 'loginForm') {
-                        icon.className = 'fas fa-sign-in-alt';
-                    } else if (icon && button.id === 'registerForm') {
-                        icon.className = 'fas fa-user-plus';
-                    }
-                }
             });
         });
-        
-        // Блокируем/разблокируем Telegram кнопку отдельно
-        if (this.telegramAuthBtn) {
-            this.telegramAuthBtn.disabled = loading;
-            if (loading) {
-                this.telegramAuthBtn.classList.add('loading');
-                const icon = this.telegramAuthBtn.querySelector('i');
-                if (icon) {
-                    icon.className = 'fas fa-spinner fa-spin';
-                }
-            } else {
-                this.telegramAuthBtn.classList.remove('loading');
-                const icon = this.telegramAuthBtn.querySelector('i');
-                if (icon) {
-                    icon.className = 'fab fa-telegram';
-                }
-            }
-        }
     }
 
     checkExistingSession() {
         const authData = this.getAuthData();
         if (authData && authData.token && !this.isTokenExpired(authData.expiresAt)) {
-            console.log('🔄 Найдена активная сессия, показываем опции...');
-            this.showSessionOptions(authData.user);
-        }
-    }
-    
-    showSessionOptions(user) {
-        const modal = document.createElement('div');
-        modal.className = 'session-modal';
-        modal.innerHTML = `
-            <div class="session-modal-content">
-                <div class="session-header">
-                    <h3>👋 Добро пожаловать, ${user.name}!</h3>
-                </div>
-                <div class="session-body">
-                    <p>У вас уже есть активная сессия. Что вы хотите сделать?</p>
-                    <div class="session-actions">
-                        <button class="btn btn-primary" id="goToDashboard">
-                            <i class="fas fa-tachometer-alt"></i> Перейти в кабинет
-                        </button>
-                        <button class="btn btn-secondary" id="loginAsAnother">
-                            <i class="fas fa-user-plus"></i> Войти как другой пользователь
-                        </button>
-                    </div>
-                </div>
-            </div>
-        `;
-        
-        document.body.appendChild(modal);
-        setTimeout(() => modal.classList.add('show'), 10);
-        
-        // Обработчики
-        modal.querySelector('#goToDashboard').addEventListener('click', () => {
+            console.log('🔄 Найдена активная сессия, перенаправление...');
             window.location.href = 'dashboard.html';
-        });
-        
-        modal.querySelector('#loginAsAnother').addEventListener('click', () => {
-            this.clearAuthData();
-            modal.remove();
-            this.showNotification('Сессия завершена, войдите заново', 'info');
-        });
+        }
     }
 
     initFormValidation() {
@@ -758,7 +557,7 @@ class AuthManager {
     }
 
     hashPassword(password) {
-        // Безопасное хеширование пароля
+        // Простое хеширование для демонстрации (в продакшене использовать bcrypt)
         return btoa(password + 'salt123');
     }
 
