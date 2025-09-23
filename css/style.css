@@ -284,26 +284,6 @@ body {
     display: none;
 }
 
-/* Auth Button Styles */
-.nav-link.auth-btn {
-    background: rgba(0, 212, 255, 0.1);
-    border: 1px solid var(--primary-color);
-    border-radius: var(--radius-full);
-    padding: var(--space-2) var(--space-4);
-    transition: all var(--transition);
-}
-
-.nav-link.auth-btn:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
-}
-
-.nav-link.auth-btn::after {
-    display: none;
-}
-
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
     position: fixed;
@@ -539,160 +519,6 @@ body {
 .sidebar-overlay.active {
     opacity: 1;
     visibility: visible;
-}
-
-/* === REALTIME DATA STYLES === */
-.realtime-data {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.realtime-section {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.realtime-section h4 {
-    margin: 0 0 1rem 0;
-    color: var(--primary-color);
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.signals-list, .trades-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.signal-item, .trade-item {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 8px;
-    padding: 0.75rem;
-    border-left: 3px solid var(--primary-color);
-    transition: all 0.3s ease;
-}
-
-.signal-item:hover, .trade-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateX(5px);
-}
-
-.signal-header, .trade-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.signal-pair, .trade-pair {
-    font-weight: 600;
-    color: #fff;
-}
-
-.signal-change, .trade-result {
-    font-weight: 600;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-
-.signal-change.success, .trade-result.success {
-    color: #00ff88;
-    background: rgba(0, 255, 136, 0.1);
-}
-
-.signal-change.danger, .trade-result.danger {
-    color: #ff4757;
-    background: rgba(255, 71, 87, 0.1);
-}
-
-.signal-change.info, .trade-result.info {
-    color: #00d4ff;
-    background: rgba(0, 212, 255, 0.1);
-}
-
-.signal-meta, .trade-meta {
-    display: flex;
-    gap: 1rem;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.signal-time, .trade-time {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.signal-quality {
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    padding: 0.1rem 0.3rem;
-    border-radius: 3px;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.signal-status {
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    padding: 0.1rem 0.3rem;
-    border-radius: 3px;
-}
-
-.signal-status.active {
-    color: #00ff88;
-    background: rgba(0, 255, 136, 0.1);
-}
-
-.signal-status.completed {
-    color: rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.connection-status {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.connection-status.connected {
-    background: rgba(0, 255, 136, 0.1);
-    color: #00ff88;
-    border: 1px solid rgba(0, 255, 136, 0.2);
-}
-
-.connection-status.disconnected {
-    background: rgba(255, 193, 7, 0.1);
-    color: #ffc107;
-    border: 1px solid rgba(255, 193, 7, 0.2);
-}
-
-/* Responsive для realtime данных */
-@media (max-width: 768px) {
-    .realtime-data {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .signal-header, .trade-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.25rem;
-    }
-    
-    .signal-meta, .trade-meta {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
 }
 
 
@@ -1310,19 +1136,6 @@ section .container {
     margin: 0 auto var(--space-6);
     font-size: var(--font-size-2xl);
     color: white;
-}
-
-/* Custom target icon styles */
-.custom-target-icon {
-    width: 40px;
-    height: 40px;
-    filter: brightness(0) invert(1);
-    transition: var(--transition);
-}
-
-.feature-card:hover .custom-target-icon {
-    transform: scale(1.1);
-    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
 }
 
 .feature-card h3 {

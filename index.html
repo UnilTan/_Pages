@@ -47,10 +47,6 @@
                 <a href="#analytics" class="nav-link">Аналитика</a>
                 <a href="#contact" class="nav-link" onclick="showContactModal()">Контакты</a>
                 <a href="#start" class="nav-link btn-primary">Начать</a>
-                <a href="auth.html" class="nav-link auth-btn">
-                    <i class="fas fa-user"></i>
-                    Войти
-                </a>
             </div>
         </div>
     </nav>
@@ -90,10 +86,6 @@
             <a href="#start" class="nav-link primary-link">
                 <i class="fab fa-telegram"></i>
                 <span>Начать</span>
-            </a>
-            <a href="auth.html" class="nav-link">
-                <i class="fas fa-user"></i>
-                <span>Войти</span>
             </a>
         </div>
         <div class="sidebar-footer">
@@ -217,7 +209,7 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <img src="images/target-icon.png" alt="Target Icon" class="custom-target-icon">
+                        <i class="fas fa-target"></i>
                     </div>
                     <h3>Точные Цели</h3>
                     <p>Автоматический расчёт целей и стоп-лоссов на основе качества сигнала и рыночных условий</p>
@@ -344,11 +336,6 @@
                             <span class="metric-label">Активные сигналы</span>
                         </div>
                     </div>
-                    
-                    <!-- Статус подключения -->
-                    <div class="connection-status" id="connectionStatus">
-                        🔄 Подключение...
-                    </div>
                 </div>
                 <div class="analytics-visual">
                     <div class="chart-container">
@@ -357,23 +344,6 @@
                     <button onclick="refreshAnalytics()" class="btn btn-secondary" style="margin-top: 1rem;">
                         🔄 Обновить данные
                     </button>
-                </div>
-            </div>
-            
-            <!-- Реальные данные в реальном времени -->
-            <div class="realtime-data" style="margin-top: 2rem;">
-                <div class="realtime-section">
-                    <h4>📡 Последние сигналы</h4>
-                    <div id="signalsContainer" class="signals-list">
-                        <!-- Сигналы будут добавлены через JavaScript -->
-                    </div>
-                </div>
-                
-                <div class="realtime-section">
-                    <h4>💹 Недавние сделки</h4>
-                    <div id="tradesContainer" class="trades-list">
-                        <!-- Сделки будут добавлены через JavaScript -->
-                    </div>
                 </div>
             </div>
         </div>
@@ -741,8 +711,6 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-    <script src="js/bot-data.js"></script>
-    <script src="js/realtime-analytics.js"></script>
     <script src="js/crypto-data.js"></script>
     <script src="js/analytics-data.js"></script>
     <script src="js/analytics-chart.js"></script>

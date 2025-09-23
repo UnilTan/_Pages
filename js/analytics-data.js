@@ -11,28 +11,15 @@ class AnalyticsDataManager {
     }
 
     /**
-     * 🔄 Загружает данные из trade_results.json или от бота
+     * 🔄 Загружает данные из trade_results.json
      */
     async loadTradeResults() {
         try {
             console.log('🔄 Загрузка торговых данных...');
-            
-            // Сначала пробуем получить данные от бота
-            if (window.botDataAPI) {
-                const botAnalytics = await window.botDataAPI.getAnalytics();
-                if (botAnalytics.success && !botAnalytics.demo) {
-                    console.log('✅ Данные получены от бота');
-                    // Если у бота есть полные торговые данные, используем их
-                    if (botAnalytics.data.trade_data) {
-                        this.tradeData = botAnalytics.data.trade_data;
-                        this.lastUpdateTime = new Date();
-                        return this.tradeData;
-                    }
-                }
-            }
-            
-            // Если бот недоступен, пробуем загрузить из файла
             console.log('📍 Текущий URL:', window.location.href);
+            
+            // В production это будет загрузка с сервера
+            // Для GitHub Pages используем fetch к статическому файлу
             const response = await fetch('trade_results.json?t=' + Date.now());
             
             if (!response.ok) {
@@ -42,7 +29,7 @@ class AnalyticsDataManager {
             this.tradeData = await response.json();
             this.lastUpdateTime = new Date();
             
-            console.log('✅ Торговые данные загружены из файла:', {
+            console.log('✅ Торговые данные загружены:', {
                 activeSignals: Object.keys(this.tradeData.active_signals || {}).length,
                 completedTrades: (this.tradeData.completed_trades || []).length
             });
