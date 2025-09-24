@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в аккаунт - CryptoWatch MEXC</title>
+    <meta name="description" content="Войдите в свой аккаунт CryptoWatch MEXC для доступа к персональному кабинету и настройкам торговых сигналов">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-page">
+    <!-- Background Animation -->
+    <div class="auth-background">
+        <div class="auth-particles">
+            <div class="auth-particle" style="--x: 5%; --y: 10%; --delay: 0s;"></div>
+            <div class="auth-particle" style="--x: 95%; --y: 15%; --delay: 2s;"></div>
+            <div class="auth-particle" style="--x: 15%; --y: 25%; --delay: 4s;"></div>
+            <div class="auth-particle" style="--x: 85%; --y: 35%; --delay: 6s;"></div>
+            <div class="auth-particle" style="--x: 25%; --y: 45%; --delay: 8s;"></div>
+            <div class="auth-particle" style="--x: 75%; --y: 55%; --delay: 10s;"></div>
+            <div class="auth-particle" style="--x: 35%; --y: 65%; --delay: 12s;"></div>
+            <div class="auth-particle" style="--x: 65%; --y: 75%; --delay: 14s;"></div>
+        </div>
+        
+        <!-- Геометрические фигуры -->
+        <div class="geometric-shapes">
+            <div class="shape triangle" style="--x: 10%; --y: 20%; --delay: 0s;"></div>
+            <div class="shape circle" style="--x: 90%; --y: 30%; --delay: 2s;"></div>
+            <div class="shape square" style="--x: 20%; --y: 70%; --delay: 4s;"></div>
+            <div class="shape hexagon" style="--x: 80%; --y: 15%; --delay: 6s;"></div>
+            <div class="shape triangle" style="--x: 70%; --y: 80%; --delay: 8s;"></div>
+            <div class="shape circle" style="--x: 30%; --y: 25%; --delay: 10s;"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="auth-nav">
+        <div class="container">
+            <a href="index.html" class="auth-nav-brand">
+                <i class="fas fa-chart-line"></i>
+                <span>CryptoWatch MEXC</span>
+            </a>
+            <a href="index.html" class="auth-nav-back">
+                <i class="fas fa-arrow-left"></i>
+                <span>На главную</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="auth-container">
+        <div class="auth-wrapper">
+            <!-- Left Side - Info -->
+            <div class="auth-info">
+                <div class="auth-info-content">
+                    <div class="auth-brand">
+                        <div class="auth-logo">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h1>CryptoWatch MEXC</h1>
+                        <p>Умный мониторинг криптовалют</p>
+                    </div>
+                    
+                    <div class="auth-features">
+                        <h2>Возможности личного кабинета</h2>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user-cog"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h3>Персональные настройки</h3>
+                                    <p>Настройте пороги сигналов и фильтры под свою торговую стратегию</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h3>Детальная статистика</h3>
+                                    <p>Отслеживайте эффективность сигналов и анализируйте результаты</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h3>Умные уведомления</h3>
+                                    <p>Получайте только релевантные сигналы в удобное время</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fab fa-telegram"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h3>Telegram интеграция</h3>
+                                    <p>Синхронизация с ботом и управление подписками</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="auth-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">2,500+</span>
+                            <span class="stat-label">Пользователей</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">85%</span>
+                            <span class="stat-label">Точность</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Мониторинг</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Auth Forms -->
+            <div class="auth-forms">
+                <!-- Login Form -->
+                <div class="auth-form-container" id="loginForm">
+                    <div class="auth-form-header">
+                        <h2>Добро пожаловать!</h2>
+                        <p>Войдите в свой аккаунт для продолжения</p>
+                    </div>
+                    
+                    <form class="auth-form" id="loginFormElement">
+                        <div class="form-group">
+                            <label for="loginEmail">Email адрес</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input 
+                                    type="email" 
+                                    id="loginEmail" 
+                                    name="email" 
+                                    placeholder="ваш@email.com" 
+                                    required
+                                    autocomplete="email"
+                                >
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="loginPassword">Пароль</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input 
+                                    type="password" 
+                                    id="loginPassword" 
+                                    name="password" 
+                                    placeholder="Введите пароль" 
+                                    required
+                                    autocomplete="current-password"
+                                >
+                                <button type="button" class="password-toggle" onclick="togglePassword('loginPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" id="rememberMe" name="remember">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">Запомнить меня</span>
+                            </label>
+                            <a href="#" class="forgot-password" onclick="showForgotPassword()">
+                                Забыли пароль?
+                            </a>
+                        </div>
+                        
+                        <button type="submit" class="auth-btn primary">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Войти в аккаунт</span>
+                        </button>
+                        
+                        <div class="divider">
+                            <span>или</span>
+                        </div>
+                        
+                        <button type="button" class="auth-btn telegram" onclick="authWithTelegram()">
+                            <i class="fab fa-telegram"></i>
+                            <span>Войти через Telegram</span>
+                        </button>
+                    </form>
+                    
+                    <div class="auth-form-footer">
+                        <p>Еще нет аккаунта? 
+                            <a href="#" onclick="showRegister()">Зарегистрироваться</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Register Form -->
+                <div class="auth-form-container" id="registerForm" style="display: none;">
+                    <div class="auth-form-header">
+                        <h2>Создание аккаунта</h2>
+                        <p>Присоединяйтесь к сообществу трейдеров</p>
+                    </div>
+                    
+                    <form class="auth-form" id="registerFormElement">
+                        <div class="form-group">
+                            <label for="registerUsername">Имя пользователя (необязательно)</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input 
+                                    type="text" 
+                                    id="registerUsername" 
+                                    name="username" 
+                                    placeholder="Как к вам обращаться?"
+                                    autocomplete="username"
+                                >
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="registerEmail">Email адрес</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input 
+                                    type="email" 
+                                    id="registerEmail" 
+                                    name="email" 
+                                    placeholder="ваш@email.com" 
+                                    required
+                                    autocomplete="email"
+                                >
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="registerPassword">Пароль</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input 
+                                    type="password" 
+                                    id="registerPassword" 
+                                    name="password" 
+                                    placeholder="Минимум 6 символов" 
+                                    required
+                                    autocomplete="new-password"
+                                >
+                                <button type="button" class="password-toggle" onclick="togglePassword('registerPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength" id="passwordStrength">
+                                <div class="strength-meter">
+                                    <div class="strength-fill"></div>
+                                </div>
+                                <span class="strength-text">Введите пароль</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="registerPasswordConfirm">Подтверждение пароля</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input 
+                                    type="password" 
+                                    id="registerPasswordConfirm" 
+                                    name="passwordConfirm" 
+                                    placeholder="Повторите пароль" 
+                                    required
+                                    autocomplete="new-password"
+                                >
+                                <button type="button" class="password-toggle" onclick="togglePassword('registerPasswordConfirm')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" id="agreeTerms" name="agree" required>
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    Я согласен с 
+                                    <a href="#" onclick="showTerms()">Условиями использования</a> 
+                                    и 
+                                    <a href="#" onclick="showPrivacy()">Политикой конфиденциальности</a>
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="auth-btn primary">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Создать аккаунт</span>
+                        </button>
+                        
+                        <div class="divider">
+                            <span>или</span>
+                        </div>
+                        
+                        <button type="button" class="auth-btn telegram" onclick="authWithTelegram()">
+                            <i class="fab fa-telegram"></i>
+                            <span>Регистрация через Telegram</span>
+                        </button>
+                    </form>
+                    
+                    <div class="auth-form-footer">
+                        <p>Уже есть аккаунт? 
+                            <a href="#" onclick="showLogin()">Войти</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Email Verification Form -->
+                <div class="auth-form-container" id="verificationForm" style="display: none;">
+                    <div class="auth-form-header">
+                        <h2>Подтверждение email</h2>
+                        <p>Мы отправили код подтверждения на ваш email</p>
+                    </div>
+                    
+                    <div class="verification-info">
+                        <div class="verification-icon">
+                            <i class="fas fa-envelope-open"></i>
+                        </div>
+                        <p>Проверьте свою почту <strong id="verificationEmail"></strong> и введите полученный код</p>
+                    </div>
+                    
+                    <form class="auth-form" id="verificationFormElement">
+                        <div class="form-group">
+                            <label for="verificationCode">Код подтверждения</label>
+                            <div class="verification-code-input">
+                                <input type="text" 
+                                       id="verificationCode" 
+                                       name="code" 
+                                       placeholder="123456" 
+                                       required
+                                       maxlength="6"
+                                       pattern="[0-9]{6}"
+                                       autocomplete="one-time-code">
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="auth-btn primary">
+                            <i class="fas fa-check"></i>
+                            <span>Подтвердить</span>
+                        </button>
+                        
+                        <div class="resend-section">
+                            <p>Не получили код?</p>
+                            <button type="button" class="resend-btn" onclick="resendCode()" id="resendBtn">
+                                <i class="fas fa-redo"></i>
+                                <span>Отправить повторно</span>
+                            </button>
+                            <div class="resend-timer" id="resendTimer" style="display: none;">
+                                Повторная отправка через <span id="timerSeconds">60</span> сек
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="auth-form-footer">
+                        <a href="#" onclick="showLogin()">← Вернуться к входу</a>
+                    </div>
+                </div>
+
+                <!-- Forgot Password Form -->
+                <div class="auth-form-container" id="forgotPasswordForm" style="display: none;">
+                    <div class="auth-form-header">
+                        <h2>Восстановление пароля</h2>
+                        <p>Введите ваш email для получения кода сброса</p>
+                    </div>
+                    
+                    <form class="auth-form" id="forgotPasswordFormElement">
+                        <div class="form-group">
+                            <label for="forgotEmail">Email адрес</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input 
+                                    type="email" 
+                                    id="forgotEmail" 
+                                    name="email" 
+                                    placeholder="ваш@email.com" 
+                                    required
+                                    autocomplete="email"
+                                >
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="auth-btn primary">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Отправить код</span>
+                        </button>
+                    </form>
+                    
+                    <div class="auth-form-footer">
+                        <a href="#" onclick="showLogin()">← Вернуться к входу</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Загрузка...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+</body>
+</html>

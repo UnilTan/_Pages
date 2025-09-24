@@ -1,20 +1,26 @@
 #!/usr/bin/env python3
 """
-Простой HTTP сервер для CryptoWatch MEXC
+HTTP сервер с API для CryptoWatch MEXC
 """
 
-import http.server
-import socketserver
 import webbrowser
 import os
 import sys
 from pathlib import Path
 
+# Импортируем наш API сервер
+try:
+    from auth_api import start_auth_server
+except ImportError:
+    print("❌ Ошибка: Не найден модуль auth_api.py")
+    print("Убедитесь, что файл auth_api.py находится в той же директории")
+    sys.exit(1)
+
 PORT = 8000
 HOST = "localhost"
 
 def main():
-    """Запуск простого HTTP сервера"""
+    """Запуск HTTP сервера с API"""
     
     # Проверяем, что мы в правильной директории
     current_dir = Path.cwd()
@@ -30,47 +36,36 @@ def main():
             sys.exit(1)
     
     try:
-        # Создаем простой HTTP сервер
-        handler = http.server.SimpleHTTPRequestHandler
+        server_url = f"http://{HOST}:{PORT}"
         
-        with socketserver.TCPServer((HOST, PORT), handler) as httpd:
-            server_url = f"http://{HOST}:{PORT}"
-            
-            print("🚀 Запуск CryptoWatch MEXC сервера...")
-            print(f"📂 Директория: {Path.cwd()}")
-            print(f"🌐 Сервер запущен: {server_url}")
-            print("📱 Сайт будет автоматически открыт в браузере")
-            print("⏹️  Для остановки нажмите Ctrl+C")
-            print("-" * 50)
-            
-            # Автоматически открываем браузер
-            try:
-                webbrowser.open(server_url)
-                print("✅ Браузер открыт автоматически")
-            except Exception as e:
-                print(f"⚠️  Не удалось открыть браузер: {e}")
-                print(f"Откройте браузер вручную: {server_url}")
-            
-            print("-" * 50)
-            print("🟢 Сервер работает...")
-            
-            # Запускаем сервер
-            httpd.serve_forever()
-            
-    except OSError as e:
-        if e.errno == 10048:  # Windows: Address already in use
-            print(f"❌ Ошибка: Порт {PORT} уже используется")
-            print("Закройте другие приложения или измените порт")
-        else:
-            print(f"❌ Ошибка при запуске сервера: {e}")
-        input("Нажмите Enter для выхода...")
-        sys.exit(1)
+        print("🚀 Запуск CryptoWatch MEXC сервера с API...")
+        print(f"📂 Директория: {Path.cwd()}")
+        print(f"🌐 Сервер запущен: {server_url}")
+        print("📱 Сайт будет автоматически открыт в браузере")
+        print("🔗 API доступно по адресу: {}/api/".format(server_url))
+        print("⏹️  Для остановки нажмите Ctrl+C")
+        print("-" * 60)
+        
+        # Автоматически открываем браузер
+        try:
+            webbrowser.open(server_url)
+            print("✅ Браузер открыт автоматически")
+        except Exception as e:
+            print(f"⚠️  Не удалось открыть браузер: {e}")
+            print(f"Откройте браузер вручную: {server_url}")
+        
+        print("-" * 60)
+        print("🟢 Сервер работает с авторизацией...")
+        
+        # Запускаем сервер с API
+        start_auth_server(PORT, HOST)
+        
     except KeyboardInterrupt:
         print("\n🛑 Сервер остановлен")
         print("👋 Спасибо за использование CryptoWatch MEXC!")
         sys.exit(0)
     except Exception as e:
-        print(f"❌ Неожиданная ошибка: {e}")
+        print(f"❌ Ошибка запуска сервера: {e}")
         input("Нажмите Enter для выхода...")
         sys.exit(1)
 
