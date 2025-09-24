@@ -46,9 +46,7 @@
                 <a href="#signals" class="nav-link">Сигналы</a>
                 <a href="#analytics" class="nav-link">Аналитика</a>
                 <a href="#contact" class="nav-link" onclick="showContactModal()">Контакты</a>
-                <div class="nav-auth-section" id="navAuthSection">
-                    <!-- Will be populated by JavaScript -->
-                </div>
+                <a href="#start" class="nav-link btn-primary">Начать</a>
             </div>
         </div>
     </nav>
@@ -85,9 +83,10 @@
                 <i class="fas fa-envelope"></i>
                 <span>Контакты</span>
             </a>
-            <div class="mobile-auth-section" id="mobileAuthSection">
-                <!-- Will be populated by JavaScript -->
-            </div>
+            <a href="#start" class="nav-link primary-link">
+                <i class="fab fa-telegram"></i>
+                <span>Начать</span>
+            </a>
         </div>
         <div class="sidebar-footer">
             <div class="social-links">
@@ -716,32 +715,6 @@
     <script src="js/analytics-data.js"></script>
     <script src="js/analytics-chart.js"></script>
     <script src="js/trading-card-updater.js"></script>
-    <!-- Определяем среду выполнения -->
-    <script>
-        // Проверяем, работаем ли мы на GitHub Pages или локально
-        const isGitHubPages = window.location.hostname.includes('github.io') || 
-                             window.location.hostname.includes('github.com') ||
-                             window.location.protocol === 'file:';
-        
-        console.log('🌐 Среда выполнения:', isGitHubPages ? 'GitHub Pages (статическая)' : 'Локальная с API');
-        
-        if (isGitHubPages) {
-            console.log('📦 Загрузка статической системы авторизации...');
-        } else {
-            console.log('🔗 Загрузка API системы авторизации...');
-        }
-    </script>
-    
-    <!-- Загружаем соответствующую систему авторизации -->
-    <script>
-        if (typeof isGitHubPages !== 'undefined' && isGitHubPages) {
-            // Статическая система для GitHub Pages
-            document.write('<script src="js/static-auth.js"><\/script>');
-        } else {
-            // API система для локального сервера
-            document.write('<script src="js/auth-integration.js"><\/script>');
-        }
-    </script>
     <script src="js/script.js"></script>
 </body>
 </html>
