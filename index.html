@@ -1,110 +1,9 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CryptoWatch MEXC - Умный Бот для Мониторинга Криптовалют</title>
-    <meta name="description" content="Профессиональный Telegram-бот для мониторинга ценовых движений на бирже MEXC с техническим анализом и умными сигналами">
-    <meta name="keywords" content="криптовалюта, мониторинг, MEXC, telegram бот, торговые сигналы, технический анализ">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="CryptoWatch MEXC - Умный Бот Мониторинга">
-    <meta property="og:description" content="Получайте качественные торговые сигналы с техническим анализом">
-    <meta property="og:type" content="website">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!-- Global Site Particles -->
-    <div class="site-particles">
-        <div class="site-particle" style="--x: 5%; --y: 10%; --delay: 0s;"></div>
-        <div class="site-particle" style="--x: 95%; --y: 15%; --delay: 2s;"></div>
-        <div class="site-particle" style="--x: 15%; --y: 25%; --delay: 4s;"></div>
-        <div class="site-particle" style="--x: 85%; --y: 35%; --delay: 6s;"></div>
-        <div class="site-particle" style="--x: 25%; --y: 45%; --delay: 8s;"></div>
-        <div class="site-particle" style="--x: 75%; --y: 55%; --delay: 10s;"></div>
-        <div class="site-particle" style="--x: 35%; --y: 65%; --delay: 12s;"></div>
-        <div class="site-particle" style="--x: 65%; --y: 75%; --delay: 14s;"></div>
-        <div class="site-particle" style="--x: 45%; --y: 85%; --delay: 16s;"></div>
-        <div class="site-particle" style="--x: 55%; --y: 95%; --delay: 18s;"></div>
-    </div>
-
-    <!-- Desktop Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <i class="fas fa-chart-line"></i>
-                <span>CryptoWatch MEXC</span>
-            </div>
-            <div class="nav-menu">
-                <a href="#features" class="nav-link">Возможности</a>
-                <a href="#signals" class="nav-link">Сигналы</a>
-                <a href="#analytics" class="nav-link">Аналитика</a>
-                <a href="#contact" class="nav-link" onclick="showContactModal()">Контакты</a>
-                <a href="#start" class="nav-link btn-primary">Начать</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu Toggle -->
-    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <!-- Mobile Sidebar Navigation -->
-    <nav class="mobile-sidebar" id="mobileSidebar">
-        <div class="sidebar-header">
-            <div class="nav-brand">
-                <i class="fas fa-chart-line"></i>
-                <span>CryptoWatch MEXC</span>
-            </div>
-        </div>
-        <div class="sidebar-menu">
-            <a href="#features" class="nav-link">
-                <i class="fas fa-star"></i>
-                <span>Возможности</span>
-            </a>
-            <a href="#signals" class="nav-link">
-                <i class="fas fa-signal"></i>
-                <span>Сигналы</span>
-            </a>
-            <a href="#analytics" class="nav-link">
-                <i class="fas fa-chart-bar"></i>
-                <span>Аналитика</span>
-            </a>
-            <a href="#contact" class="nav-link" onclick="showContactModal()">
-                <i class="fas fa-envelope"></i>
-                <span>Контакты</span>
-            </a>
-            <a href="#start" class="nav-link primary-link">
-                <i class="fab fa-telegram"></i>
-                <span>Начать</span>
-            </a>
-        </div>
-        <div class="sidebar-footer">
-            <div class="social-links">
-                <a href="https://t.me/DUMPBest_bot" target="_blank" title="Telegram">
-                    <i class="fab fa-telegram"></i>
-                </a>
-                <a href="https://twitter.com/cryptowatch_mexc" target="_blank" title="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://discord.gg/cryptowatch" target="_blank" title="Discord">
-                    <i class="fab fa-discord"></i>
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Sidebar Overlay -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+---
+layout: default
+title: "Умный Бот для Мониторинга Криптовалют"
+description: "Профессиональный Telegram-бот для мониторинга ценовых движений на бирже MEXC с техническим анализом и умными сигналами"
+keywords: "криптовалюта, мониторинг, MEXC, telegram бот, торговые сигналы, технический анализ"
+---
 
     <!-- Hero Section -->
         <section class="hero">
@@ -141,7 +40,7 @@
                     </div>
                 </div>
                 <div class="hero-actions">
-                    <a href="#start" class="btn btn-primary btn-large">
+                    <a href="{{ site.telegram_bot }}" class="btn btn-primary btn-large" target="_blank" rel="noopener">
                         <i class="fab fa-telegram"></i>
                         Подключиться к боту
                     </a>
@@ -152,35 +51,7 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="trading-card">
-                    <div class="card-header">
-                        <span class="signal-badge pump">📈 PUMP: +12.5%</span>
-                        <span class="coin-name">BTC_USDT</span>
-                    </div>
-                    <div class="price-info">
-                        <span class="price-old">$42,150</span>
-                        <span class="price-arrow">→</span>
-                        <span class="price-current">$47,420</span>
-                    </div>
-                    <div class="technical-info">
-                        <div class="indicator">
-                            <span class="label">RSI (14):</span>
-                            <span class="value green">75.2 🔴 Перекуплено</span>
-                        </div>
-                        <div class="indicator">
-                            <span class="label">MACD:</span>
-                            <span class="value green">📈 Бычий</span>
-                        </div>
-                        <div class="indicator">
-                            <span class="label">Качество:</span>
-                            <span class="value">ВЫСОКИЙ (85%)</span>
-                        </div>
-                    </div>
-                    <div class="targets">
-                        <div class="target-item">🎯 Цели: $48,500 | $50,200 | $52,800</div>
-                        <div class="target-item">🛡 Стоп: $45,900</div>
-                    </div>
-                </div>
+                {% include trading-card.html %}
             </div>
         </div>
     </section>
@@ -259,7 +130,7 @@
                         <li><i class="fas fa-check"></i> Горячие монеты и статистика</li>
                     </ul>
                     <div class="signal-actions">
-                        <a href="https://boosty.to/cryptowatch-mexc" target="_blank" class="boosty-btn" onclick="event.stopPropagation();">
+                        <a href="{{ site.boosty_link }}" target="_blank" class="boosty-btn" onclick="event.stopPropagation();">
                             <i class="fas fa-rocket"></i>
                             Бусти
                         </a>
@@ -277,7 +148,7 @@
                         <li><i class="fas fa-check"></i> Рекомендации по позициям</li>
                     </ul>
                     <div class="signal-actions">
-                        <a href="https://boosty.to/cryptowatch-mexc" target="_blank" class="boosty-btn" onclick="event.stopPropagation();">
+                        <a href="{{ site.boosty_link }}" target="_blank" class="boosty-btn" onclick="event.stopPropagation();">
                             <i class="fas fa-rocket"></i>
                             Бусти
                         </a>
@@ -295,7 +166,7 @@
                         <li><i class="fas fa-check"></i> Детектор продолжения трендов</li>
                     </ul>
                     <div class="signal-actions">
-                        <a href="https://boosty.to/cryptowatch-mexc" target="_blank" class="boosty-btn" onclick="event.stopPropagation();">
+                        <a href="{{ site.boosty_link }}" target="_blank" class="boosty-btn" onclick="event.stopPropagation();">
                             <i class="fas fa-rocket"></i>
                             Бусти
                         </a>
@@ -392,13 +263,13 @@
                 <h2>Готовы Начать?</h2>
                 <p>Подключитесь к CryptoWatch MEXC и получите доступ к профессиональным торговым сигналам</p>
                 <div class="start-actions">
-                    <a href="https://t.me/DUMPBest_bot" class="btn btn-primary btn-large" target="_blank">
+                    <a href="{{ site.telegram_bot }}" class="btn btn-primary btn-large" target="_blank" rel="noopener">
                         <i class="fab fa-telegram"></i>
                         Запустить Бота
                     </a>
                     <div class="contact-info">
                         <p>Нужна помощь? Свяжитесь с нами:</p>
-                        <a href="https://t.me/Solnyshchko" target="_blank">
+                        <a href="{{ site.support_contact }}" target="_blank" rel="noopener">
                             <i class="fab fa-telegram"></i>
                             @Solnyshchko
                         </a>
@@ -408,313 +279,4 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="brand">
-                        <i class="fas fa-chart-line"></i>
-                        <span>CryptoWatch MEXC</span>
-                    </div>
-                    <p>Профессиональный мониторинг криптовалют для успешной торговли</p>
-                    <div class="footer-stats">
-                        <div class="footer-stat">
-                            <span class="stat-number" id="footerUsers">2,500+</span>
-                            <span class="stat-label">Активных пользователей</span>
-                        </div>
-                        <div class="footer-stat">
-                            <span class="stat-number" id="footerSignals">15,000+</span>
-                            <span class="stat-label">Отправлено сигналов</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="link-group">
-                    <h4><i class="fas fa-cog"></i> Продукт</h4>
-                    <a href="#features"><i class="fas fa-star"></i> Возможности</a>
-                    <a href="#signals"><i class="fas fa-signal"></i> Сигналы</a>
-                    <a href="#analytics"><i class="fas fa-chart-bar"></i> Аналитика</a>
-                </div>
-                <div class="link-group">
-                    <h4><i class="fas fa-headset"></i> Поддержка</h4>
-                    <a href="#contact" onclick="showContactModal()"><i class="fas fa-envelope"></i> Контакты</a>
-                    <a href="#help" onclick="showHelpModal()"><i class="fas fa-question-circle"></i> Помощь</a>
-                    <a href="#docs" onclick="showDocsModal()"><i class="fas fa-book"></i> Документация</a>
-                </div>
-                <div class="link-group">
-                    <h4><i class="fas fa-share-alt"></i> Социальные сети</h4>
-                    <a href="https://t.me/DUMPBest_bot" target="_blank" class="social-link">
-                        <i class="fab fa-telegram"></i> Telegram
-                    </a>
-                    <a href="https://twitter.com/cryptowatch_mexc" target="_blank" class="social-link">
-                        <i class="fab fa-twitter"></i> Twitter
-                    </a>
-                    <a href="https://discord.gg/cryptowatch" target="_blank" class="social-link">
-                        <i class="fab fa-discord"></i> Discord
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 CryptoWatch MEXC. Все права защищены. Код расположен под лицензией CLA подробнее на GitHub.</p>
-                <div class="footer-disclaimer">
-                    <small><i class="fas fa-exclamation-triangle"></i> Торговля криптовалютами связана с высокими рисками. Инвестируйте ответственно.</small>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Floating particles for footer -->
-        <div class="footer-particles">
-            <div class="footer-particle" style="--x: 10%; --y: 20%; --delay: 0s;"></div>
-            <div class="footer-particle" style="--x: 85%; --y: 30%; --delay: 1s;"></div>
-            <div class="footer-particle" style="--x: 25%; --y: 70%; --delay: 2s;"></div>
-            <div class="footer-particle" style="--x: 70%; --y: 15%; --delay: 3s;"></div>
-            <div class="footer-particle" style="--x: 45%; --y: 85%; --delay: 4s;"></div>
-            <div class="footer-particle" style="--x: 90%; --y: 60%; --delay: 5s;"></div>
-        </div>
-    </footer>
 
-    <!-- Video Modal -->
-    <div id="videoModal" class="video-modal">
-        <div class="video-modal-content">
-            <button class="video-modal-close">&times;</button>
-            <div class="video-container">
-                <iframe id="vimeoPlayer" 
-                        src="" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Modal -->
-    <div id="contactModal" class="info-modal">
-        <div class="info-modal-content">
-            <button class="info-modal-close">&times;</button>
-            <div class="modal-header">
-                <h2><i class="fas fa-envelope"></i> Связаться с нами</h2>
-            </div>
-            <div class="modal-body">
-                <div class="contact-methods">
-                    <div class="contact-method">
-                        <i class="fab fa-telegram"></i>
-                        <div class="contact-info">
-                            <h4>Telegram</h4>
-                            <p>Основной канал поддержки</p>
-                            <a href="https://t.me/Solnyshchko" target="_blank" class="contact-btn">
-                                @Solnyshchko
-                            </a>
-                        </div>
-                    </div>
-                    <div class="contact-method">
-                        <i class="fas fa-robot"></i>
-                        <div class="contact-info">
-                            <h4>Бот поддержки</h4>
-                            <p>Автоматические ответы 24/7</p>
-                            <a href="https://t.me/DUMPBest_bot" target="_blank" class="contact-btn">
-                                @DUMPBest_bot
-                            </a>
-                        </div>
-                    </div>
-                    <div class="contact-method">
-                        <i class="fas fa-clock"></i>
-                        <div class="contact-info">
-                            <h4>Время работы</h4>
-                            <p>Ответы в течение 1-2 часов</p>
-                            <span class="status online">● Онлайн</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3>Быстрое сообщение</h3>
-                    <form id="contactForm">
-                        <input type="text" placeholder="Ваше имя" required>
-                        <input type="email" placeholder="Email (необязательно)">
-                        <textarea placeholder="Ваш вопрос или сообщение" rows="4" required></textarea>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i> Отправить
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Help Modal -->
-    <div id="helpModal" class="info-modal">
-        <div class="info-modal-content">
-            <button class="info-modal-close">&times;</button>
-            <div class="modal-header">
-                <h2><i class="fas fa-question-circle"></i> Помощь и FAQ</h2>
-            </div>
-            <div class="modal-body">
-                <div class="faq-section">
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <i class="fas fa-chevron-right"></i>
-                            Как начать использовать бота?
-                        </div>
-                        <div class="faq-answer">
-                            <p>1. Перейдите по ссылке на бота @DUMPBest_bot</p>
-                            <p>2. Нажмите /start для активации</p>
-                            <p>3. Выберите интересующие вас пороги сигналов</p>
-                            <p>4. Настройте фильтры под свою торговую стратегию</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <i class="fas fa-chevron-right"></i>
-                            Какие пороги сигналов лучше выбрать?
-                        </div>
-                        <div class="faq-answer">
-                            <p><strong>5% сигналы:</strong> Для активной торговли и скальпинга</p>
-                            <p><strong>7% сигналы:</strong> Оптимальный баланс частоты и качества</p>
-                            <p><strong>12% сигналы:</strong> Для консервативной торговли крупными суммами</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <i class="fas fa-chevron-right"></i>
-                            Как работает технический анализ?
-                        </div>
-                        <div class="faq-answer">
-                            <p>Бот анализирует несколько индикаторов:</p>
-                            <ul>
-                                <li><strong>RSI:</strong> Определяет перекупленность/перепроданность</li>
-                                <li><strong>MACD:</strong> Показывает направление тренда</li>
-                                <li><strong>Объемы:</strong> Подтверждают силу движения</li>
-                                <li><strong>Волатильность:</strong> Оценивает риски</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <i class="fas fa-chevron-right"></i>
-                            Бесплатно ли использование бота?
-                        </div>
-                        <div class="faq-answer">
-                            <p>Да! Базовая функциональность бота полностью бесплатна:</p>
-                            <ul>
-                                <li>Получение торговых сигналов</li>
-                                <li>Технический анализ</li>
-                                <li>Статистика и отслеживание</li>
-                            </ul>
-                            <p>Премиум функции добавляются по запросу сообщества.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Documentation Modal -->
-    <div id="docsModal" class="info-modal">
-        <div class="info-modal-content">
-            <button class="info-modal-close">&times;</button>
-            <div class="modal-header">
-                <h2><i class="fas fa-book"></i> Документация</h2>
-            </div>
-            <div class="modal-body">
-                <div class="docs-navigation">
-                    <div class="docs-nav-item active" onclick="showDocsSection('getting-started')">
-                        <i class="fas fa-play"></i> Начало работы
-                    </div>
-                    <div class="docs-nav-item" onclick="showDocsSection('commands')">
-                        <i class="fas fa-terminal"></i> Команды
-                    </div>
-                    <div class="docs-nav-item" onclick="showDocsSection('settings')">
-                        <i class="fas fa-cog"></i> Настройки
-                    </div>
-                    <div class="docs-nav-item" onclick="showDocsSection('api')">
-                        <i class="fas fa-code"></i> API
-                    </div>
-                </div>
-                <div class="docs-content">
-                    <div id="getting-started" class="docs-section active">
-                        <h3>Быстрый старт</h3>
-                        <div class="code-block">
-                            <div class="code-header">
-                                <span>Telegram команды</span>
-                                <button class="copy-btn" data-copy="/start\n/help\n/settings">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <pre><code>/start - Запустить бота
-/help - Показать справку
-/settings - Открыть настройки</code></pre>
-                        </div>
-                        <p>После запуска бота вы получите приветственное сообщение с основными настройками.</p>
-                    </div>
-                    <div id="commands" class="docs-section">
-                        <h3>Все команды</h3>
-                        <div class="command-list">
-                            <div class="command-item">
-                                <code>/start</code>
-                                <span>Запуск и инициализация бота</span>
-                            </div>
-                            <div class="command-item">
-                                <code>/settings</code>
-                                <span>Настройки фильтров и порогов</span>
-                            </div>
-                            <div class="command-item">
-                                <code>/stats</code>
-                                <span>Статистика сигналов за период</span>
-                            </div>
-                            <div class="command-item">
-                                <code>/hot</code>
-                                <span>Список горячих монет</span>
-                            </div>
-                            <div class="command-item">
-                                <code>/stop</code>
-                                <span>Остановить уведомления</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="settings" class="docs-section">
-                        <h3>Настройки бота</h3>
-                        <h4>Пороги сигналов:</h4>
-                        <ul>
-                            <li><strong>5%:</strong> Высокая частота, подходит для скальпинга</li>
-                            <li><strong>7%:</strong> Сбалансированный режим (рекомендуется)</li>
-                            <li><strong>12%:</strong> Консервативный режим для крупных сделок</li>
-                        </ul>
-                        <h4>Фильтры качества:</h4>
-                        <ul>
-                            <li><strong>Минимальный RSI:</strong> Фильтр по индикатору RSI</li>
-                            <li><strong>MACD подтверждение:</strong> Требовать подтверждение тренда</li>
-                            <li><strong>Объем:</strong> Минимальный объем торгов</li>
-                        </ul>
-                    </div>
-                    <div id="api" class="docs-section">
-                        <h3>API интеграция</h3>
-                        <p>Для разработчиков доступны следующие возможности:</p>
-                        <div class="code-block">
-                            <div class="code-header">
-                                <span>Webhook пример</span>
-                                <button class="copy-btn" data-copy="https://api.telegram.org/bot<TOKEN>/setWebhook?url=<YOUR_URL>">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-                            <pre><code>POST https://api.telegram.org/bot&lt;TOKEN&gt;/setWebhook
-{
-  "url": "https://your-domain.com/webhook",
-  "allowed_updates": ["message", "callback_query"]
-}</code></pre>
-                        </div>
-                        <p><strong>Примечание:</strong> API функции доступны по запросу для проверенных разработчиков.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-    <script src="js/crypto-data.js"></script>
-    <script src="js/analytics-data.js"></script>
-    <script src="js/analytics-chart.js"></script>
-    <script src="js/trading-card-updater.js"></script>
-    <script src="js/script.js"></script>
-</body>
-</html>

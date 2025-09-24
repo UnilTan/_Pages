@@ -1,0 +1,53 @@
+# Jekyll build files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby
+.bundle/
+vendor/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (if using npm for anything)
+node_modules/
+package-lock.json
+
+# Local development
+.env
+.env.local
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# Backup files
+*.bak
+*.backup
+
+# Python cache (for any Python scripts)
+__pycache__/
+*.pyc
+*.pyo
+
+# Local server files
+simple_server.py
+start_server.bat

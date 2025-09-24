@@ -1,0 +1,19 @@
+- title: "Возможности"
+  url: "/features/"
+  icon: "fas fa-star"
+
+- title: "Сигналы"
+  url: "/#signals"
+  icon: "fas fa-signal"
+
+- title: "Аналитика"
+  url: "/analytics/"
+  icon: "fas fa-chart-bar"
+
+- title: "О проекте"
+  url: "/about/"
+  icon: "fas fa-info-circle"
+
+- title: "Контакты"
+  url: "/contact/"
+  icon: "fas fa-envelope"

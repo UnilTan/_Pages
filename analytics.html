@@ -1,0 +1,832 @@
+---
+layout: page
+title: "Аналитика CryptoWatch MEXC"
+description: "Живая аналитика торговых результатов, статистика сигналов и детальные отчеты по эффективности торгового бота"
+keywords: "аналитика торговли, статистика сигналов, процент успеха, торговые результаты, отчеты"
+---
+
+<section class="analytics-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h2 class="section-title">Аналитика и Мониторинг</h2>
+            <p class="section-subtitle">
+                Полный контроль над торговыми операциями с детальной статистикой в реальном времени
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Основные метрики -->
+<section class="main-metrics">
+    <div class="container">
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="metric-content">
+                    <div class="metric-value" id="winRateValue">85%</div>
+                    <div class="metric-label">Точность сигналов</div>
+                    <div class="metric-change positive">+2.3%</div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="metric-content">
+                    <div class="metric-value" id="avgMultiplierValue">2.3x</div>
+                    <div class="metric-label">Средняя прибыль</div>
+                    <div class="metric-change positive">+0.2x</div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-signal"></i>
+                </div>
+                <div class="metric-content">
+                    <div class="metric-value" id="activeSignalsValue">15</div>
+                    <div class="metric-label">Активные сигналы</div>
+                    <div class="metric-change neutral">0</div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <div class="metric-content">
+                    <div class="metric-value" id="totalProfitValue">+247%</div>
+                    <div class="metric-label">Общая прибыль</div>
+                    <div class="metric-change positive">+15.2%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="update-info">
+            <span class="update-status">
+                <i class="fas fa-sync-alt"></i>
+                Данные обновляются в реальном времени
+            </span>
+            <button onclick="refreshAnalytics()" class="btn btn-secondary">
+                <i class="fas fa-refresh"></i> Обновить
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- График производительности -->
+<section class="performance-chart-section">
+    <div class="container">
+        <div class="analytics-content">
+            <div class="analytics-text">
+                <h3>Продвинутая Система Отслеживания</h3>
+                <ul class="analytics-features">
+                    <li><i class="fas fa-eye"></i> Отслеживание результатов каждого сигнала</li>
+                    <li><i class="fas fa-bell"></i> Уведомления о достижении целей</li>
+                    <li><i class="fas fa-chart-pie"></i> Ежедневная статистика эффективности</li>
+                    <li><i class="fas fa-clock"></i> Follow-up сигналов до 48 часов</li>
+                    <li><i class="fas fa-shield-alt"></i> Автоматическая очистка устаревших данных</li>
+                </ul>
+
+                <div class="period-selector">
+                    <h4>Период анализа:</h4>
+                    <div class="period-buttons">
+                        <button class="period-btn active" data-period="7">7 дней</button>
+                        <button class="period-btn" data-period="30">30 дней</button>
+                        <button class="period-btn" data-period="90">3 месяца</button>
+                        <button class="period-btn" data-period="365">1 год</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="analytics-visual">
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+                <div class="chart-controls">
+                    <button onclick="refreshAnalytics()" class="btn btn-secondary">
+                        🔄 Обновить данные
+                    </button>
+                    <button onclick="exportChart()" class="btn btn-outline">
+                        📊 Экспорт
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Детальная статистика по типам сигналов -->
+<section class="signals-breakdown">
+    <div class="container">
+        <h2 class="section-title">Статистика по Типам Сигналов</h2>
+        
+        <div class="breakdown-grid">
+            <div class="breakdown-card">
+                <div class="breakdown-header">
+                    <h3>5% Сигналы</h3>
+                    <span class="signal-badge quick">Быстрые</span>
+                </div>
+                <div class="breakdown-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Всего сигналов:</span>
+                        <span class="stat-value">247</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Успешных:</span>
+                        <span class="stat-value success">182 (73.7%)</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Средняя прибыль:</span>
+                        <span class="stat-value">+8.4%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Лучший результат:</span>
+                        <span class="stat-value success">+24.7%</span>
+                    </div>
+                </div>
+                <div class="breakdown-chart">
+                    <canvas id="signals5Chart" width="200" height="100"></canvas>
+                </div>
+            </div>
+
+            <div class="breakdown-card featured">
+                <div class="breakdown-header">
+                    <h3>7% Сигналы</h3>
+                    <span class="signal-badge balanced">Сбалансированные</span>
+                </div>
+                <div class="breakdown-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Всего сигналов:</span>
+                        <span class="stat-value">156</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Успешных:</span>
+                        <span class="stat-value success">132 (84.6%)</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Средняя прибыль:</span>
+                        <span class="stat-value">+12.8%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Лучший результат:</span>
+                        <span class="stat-value success">+31.2%</span>
+                    </div>
+                </div>
+                <div class="breakdown-chart">
+                    <canvas id="signals7Chart" width="200" height="100"></canvas>
+                </div>
+            </div>
+
+            <div class="breakdown-card">
+                <div class="breakdown-header">
+                    <h3>12% Сигналы</h3>
+                    <span class="signal-badge premium">Премиум</span>
+                </div>
+                <div class="breakdown-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Всего сигналов:</span>
+                        <span class="stat-value">89</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Успешных:</span>
+                        <span class="stat-value success">78 (87.6%)</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Средняя прибыль:</span>
+                        <span class="stat-value">+18.3%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Лучший результат:</span>
+                        <span class="stat-value success">+42.1%</span>
+                    </div>
+                </div>
+                <div class="breakdown-chart">
+                    <canvas id="signals12Chart" width="200" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Активные сигналы в реальном времени -->
+<section class="active-signals">
+    <div class="container">
+        <h2 class="section-title">Активные Сигналы</h2>
+        <p class="section-subtitle">
+            Отслеживание текущих торговых возможностей в реальном времени
+        </p>
+
+        <div class="signals-table-container">
+            <table class="signals-table">
+                <thead>
+                    <tr>
+                        <th>Пара</th>
+                        <th>Тип</th>
+                        <th>Вход</th>
+                        <th>Текущая цена</th>
+                        <th>P&L</th>
+                        <th>Цели</th>
+                        <th>Время</th>
+                        <th>Статус</th>
+                    </tr>
+                </thead>
+                <tbody id="activeSignalsTable">
+                    <!-- Данные загружаются через JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-actions">
+            <button onclick="refreshActiveSignals()" class="btn btn-secondary">
+                <i class="fas fa-sync-alt"></i> Обновить сигналы
+            </button>
+            <button onclick="exportSignals()" class="btn btn-outline">
+                <i class="fas fa-download"></i> Экспорт данных
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Статистика по времени -->
+<section class="time-analysis">
+    <div class="container">
+        <h2 class="section-title">Анализ по Времени</h2>
+        
+        <div class="time-grid">
+            <div class="time-card">
+                <h3>Лучшие часы для торговли</h3>
+                <div class="time-chart">
+                    <canvas id="hourlyChart" width="300" height="150"></canvas>
+                </div>
+                <p class="time-insight">
+                    <i class="fas fa-lightbulb"></i>
+                    Наибольшая активность: 08:00-12:00 и 14:00-18:00 UTC
+                </p>
+            </div>
+
+            <div class="time-card">
+                <h3>Дни недели</h3>
+                <div class="weekday-stats">
+                    <div class="weekday-item">
+                        <span class="day">ПН</span>
+                        <div class="day-bar" style="width: 75%;"></div>
+                        <span class="percentage">75%</span>
+                    </div>
+                    <div class="weekday-item">
+                        <span class="day">ВТ</span>
+                        <div class="day-bar" style="width: 82%;"></div>
+                        <span class="percentage">82%</span>
+                    </div>
+                    <div class="weekday-item">
+                        <span class="day">СР</span>
+                        <div class="day-bar" style="width: 88%;"></div>
+                        <span class="percentage">88%</span>
+                    </div>
+                    <div class="weekday-item">
+                        <span class="day">ЧТ</span>
+                        <div class="day-bar" style="width: 85%;"></div>
+                        <span class="percentage">85%</span>
+                    </div>
+                    <div class="weekday-item">
+                        <span class="day">ПТ</span>
+                        <div class="day-bar" style="width: 79%;"></div>
+                        <span class="percentage">79%</span>
+                    </div>
+                    <div class="weekday-item">
+                        <span class="day">СБ</span>
+                        <div class="day-bar" style="width: 71%;"></div>
+                        <span class="percentage">71%</span>
+                    </div>
+                    <div class="weekday-item">
+                        <span class="day">ВС</span>
+                        <div class="day-bar" style="width: 68%;"></div>
+                        <span class="percentage">68%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Призыв к действию -->
+<section class="start-section">
+    <div class="container">
+        <div class="start-content">
+            <h2>Начните Отслеживать Свои Результаты</h2>
+            <p>Получите доступ к детальной аналитике и улучшите свои торговые результаты</p>
+            <div class="start-actions">
+                <a href="{{ site.telegram_bot }}" class="btn btn-primary btn-large" target="_blank" rel="noopener">
+                    <i class="fab fa-telegram"></i>
+                    Запустить Бота
+                </a>
+                <a href="{{ '/features/' | relative_url }}" class="btn btn-secondary btn-large">
+                    <i class="fas fa-star"></i>
+                    Все Возможности
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.analytics-hero {
+    padding: 40px 0 60px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.main-metrics {
+    padding: 60px 0;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.metric-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.15);
+}
+
+.metric-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.metric-content {
+    flex: 1;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.metric-change {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.metric-change.positive {
+    color: var(--success-color);
+}
+
+.metric-change.negative {
+    color: var(--danger-color);
+}
+
+.metric-change.neutral {
+    color: #666;
+}
+
+.update-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+}
+
+.update-status {
+    color: var(--success-color);
+    font-size: 0.9rem;
+}
+
+.performance-chart-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.analytics-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.period-selector {
+    margin-top: 2rem;
+}
+
+.period-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.period-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    background: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.period-btn.active,
+.period-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.analytics-visual {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container {
+    height: 300px;
+    margin-bottom: 1rem;
+}
+
+.chart-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.signals-breakdown {
+    padding: 80px 0;
+}
+
+.breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.breakdown-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.breakdown-card.featured {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.02);
+}
+
+.breakdown-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.15);
+}
+
+.breakdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.breakdown-stats {
+    margin-bottom: 1.5rem;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #666;
+}
+
+.stat-value {
+    font-weight: 600;
+}
+
+.stat-value.success {
+    color: var(--success-color);
+}
+
+.breakdown-chart {
+    height: 100px;
+}
+
+.active-signals {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.signals-table-container {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+.signals-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.signals-table th {
+    background: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.signals-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.signals-table tr:hover {
+    background: #f8fafc;
+}
+
+.table-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.time-analysis {
+    padding: 80px 0;
+}
+
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.time-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.time-chart {
+    height: 150px;
+    margin: 1rem 0;
+}
+
+.time-insight {
+    background: #f0f9ff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--primary-color);
+    border-left: 4px solid var(--primary-color);
+}
+
+.weekday-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.weekday-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.day {
+    width: 30px;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.day-bar {
+    height: 20px;
+    background: var(--primary-gradient);
+    border-radius: 10px;
+    flex: 1;
+    max-width: 200px;
+}
+
+.percentage {
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 40px;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .analytics-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .breakdown-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .signals-table-container {
+        overflow-x: auto;
+    }
+    
+    .time-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .period-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .update-info {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .table-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+
+<script>
+// Инициализация аналитики для страницы
+document.addEventListener('DOMContentLoaded', function() {
+    // Инициализируем графики
+    setTimeout(initAnalytics, 500);
+    
+    // Загружаем активные сигналы
+    loadActiveSignals();
+    
+    // Инициализируем мини-графики для типов сигналов
+    initSignalTypeCharts();
+    
+    // Инициализируем график по часам
+    initHourlyChart();
+    
+    // Обработчики для кнопок периода
+    document.querySelectorAll('.period-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            const period = this.dataset.period;
+            updateChartPeriod(period);
+        });
+    });
+});
+
+// Загрузка активных сигналов
+function loadActiveSignals() {
+    // Здесь будет загрузка реальных данных
+    // Пока используем демо-данные
+    const tableBody = document.getElementById('activeSignalsTable');
+    if (tableBody) {
+        tableBody.innerHTML = `
+            <tr>
+                <td>BTC/USDT</td>
+                <td><span class="signal-badge pump">PUMP</span></td>
+                <td>$42,150</td>
+                <td>$43,780</td>
+                <td class="profit">+3.87%</td>
+                <td>🎯 1/3</td>
+                <td>2ч 15м</td>
+                <td><span class="status active">Активен</span></td>
+            </tr>
+            <tr>
+                <td>ETH/USDT</td>
+                <td><span class="signal-badge dump">DUMP</span></td>
+                <td>$2,580</td>
+                <td>$2,450</td>
+                <td class="profit">+5.04%</td>
+                <td>🎯 2/3</td>
+                <td>45м</td>
+                <td><span class="status active">Активен</span></td>
+            </tr>
+        `;
+    }
+}
+
+// Обновление активных сигналов
+function refreshActiveSignals() {
+    showNotification('Сигналы обновлены!', 'success');
+    loadActiveSignals();
+}
+
+// Экспорт сигналов
+function exportSignals() {
+    showNotification('Экспорт данных запущен...', 'info');
+    // Здесь будет логика экспорта
+}
+
+// Экспорт графика
+function exportChart() {
+    showNotification('График экспортирован!', 'success');
+    // Здесь будет логика экспорта графика
+}
+
+// Инициализация мини-графиков для типов сигналов
+function initSignalTypeCharts() {
+    // Простые графики для каждого типа сигналов
+    ['5', '7', '12'].forEach(type => {
+        const canvas = document.getElementById(`signals${type}Chart`);
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            // Простой градиент для демонстрации
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+            gradient.addColorStop(0, '#4ECDC4');
+            gradient.addColorStop(1, '#00D4FF');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, canvas.height - 30, canvas.width, 30);
+        }
+    });
+}
+
+// Инициализация графика по часам
+function initHourlyChart() {
+    const canvas = document.getElementById('hourlyChart');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        
+        // Демо-данные активности по часам
+        const hours = Array.from({length: 24}, (_, i) => i);
+        const values = hours.map(() => Math.random() * 100);
+        
+        // Простая визуализация
+        ctx.strokeStyle = '#00D4FF';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        
+        values.forEach((value, index) => {
+            const x = (index / 23) * canvas.width;
+            const y = canvas.height - (value / 100) * canvas.height;
+            
+            if (index === 0) {
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(x, y);
+            }
+        });
+        
+        ctx.stroke();
+    }
+}
+
+// Обновление периода графика
+function updateChartPeriod(period) {
+    console.log(`Обновление графика для периода: ${period} дней`);
+    // Здесь будет логика обновления графика
+}
+</script>

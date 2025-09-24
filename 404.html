@@ -1,0 +1,609 @@
+---
+layout: default
+title: "Страница не найдена"
+description: "Запрашиваемая страница не найдена. Вернитесь на главную страницу CryptoWatch MEXC или используйте навигацию."
+permalink: /404.html
+sitemap: false
+---
+
+<section class="error-page">
+    <div class="container">
+        <div class="error-content">
+            <div class="error-visual">
+                <div class="error-number">404</div>
+                <div class="error-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="floating-elements">
+                    <div class="float-element" style="--delay: 0s; --x: 10%; --y: 20%;">📈</div>
+                    <div class="float-element" style="--delay: 1s; --x: 80%; --y: 30%;">💰</div>
+                    <div class="float-element" style="--delay: 2s; --x: 20%; --y: 70%;">📊</div>
+                    <div class="float-element" style="--delay: 3s; --x: 70%; --y: 80%;">🚀</div>
+                </div>
+            </div>
+            
+            <div class="error-text">
+                <h1>Страница не найдена</h1>
+                <p class="error-message">
+                    К сожалению, запрашиваемая вами страница не существует или была перемещена. 
+                    Возможно, вы перешли по устаревшей ссылке или ошиблись в адресе.
+                </p>
+                
+                <div class="quick-actions">
+                    <a href="{{ '/' | relative_url }}" class="btn btn-primary btn-large">
+                        <i class="fas fa-home"></i>
+                        На главную
+                    </a>
+                    <a href="{{ site.telegram_bot }}" class="btn btn-secondary btn-large" target="_blank" rel="noopener">
+                        <i class="fab fa-telegram"></i>
+                        Запустить бота
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Полезные ссылки -->
+<section class="helpful-links">
+    <div class="container">
+        <h2>Возможно, вы искали:</h2>
+        
+        <div class="links-grid">
+            <div class="link-card">
+                <div class="link-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Возможности</h3>
+                <p>Узнайте о всех функциях нашего торгового бота</p>
+                <a href="{{ '/features/' | relative_url }}" class="link-btn">
+                    Подробнее <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="link-card">
+                <div class="link-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>Аналитика</h3>
+                <p>Живая статистика и результаты торговых сигналов</p>
+                <a href="{{ '/analytics/' | relative_url }}" class="link-btn">
+                    Посмотреть <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="link-card">
+                <div class="link-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <h3>О проекте</h3>
+                <p>История, команда и технологии CryptoWatch MEXC</p>
+                <a href="{{ '/about/' | relative_url }}" class="link-btn">
+                    Читать <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="link-card">
+                <div class="link-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Контакты</h3>
+                <p>Поддержка, помощь и обратная связь</p>
+                <a href="{{ '/contact/' | relative_url }}" class="link-btn">
+                    Связаться <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Поиск -->
+<section class="search-section">
+    <div class="container">
+        <div class="search-content">
+            <h3>Попробуйте найти нужную информацию</h3>
+            <div class="search-form">
+                <div class="search-input-group">
+                    <input type="text" 
+                           id="siteSearch" 
+                           placeholder="Введите ключевые слова..." 
+                           autocomplete="off">
+                    <button type="button" onclick="performSearch()" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+            </div>
+            
+            <div class="popular-searches">
+                <span class="popular-label">Популярные запросы:</span>
+                <a href="{{ '/' | relative_url }}#signals" class="tag">сигналы</a>
+                <a href="{{ '/features/' | relative_url }}" class="tag">настройки</a>
+                <a href="{{ '/analytics/' | relative_url }}" class="tag">статистика</a>
+                <a href="{{ '/contact/' | relative_url }}" class="tag">помощь</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Контакт с поддержкой -->
+<section class="support-section">
+    <div class="container">
+        <div class="support-card">
+            <div class="support-icon">
+                <i class="fas fa-headset"></i>
+            </div>
+            <div class="support-content">
+                <h3>Нужна помощь?</h3>
+                <p>
+                    Если вы не можете найти нужную страницу или у вас есть вопросы, 
+                    наша команда поддержки готова помочь вам 24/7.
+                </p>
+                <div class="support-actions">
+                    <a href="{{ site.support_contact }}" 
+                       class="btn btn-primary" 
+                       target="_blank" 
+                       rel="noopener">
+                        <i class="fab fa-telegram"></i>
+                        Написать в поддержку
+                    </a>
+                    <a href="#" 
+                       onclick="showHelpModal()" 
+                       class="btn btn-outline">
+                        <i class="fas fa-question-circle"></i>
+                        FAQ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.error-page {
+    padding: 120px 0 80px;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.error-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.error-visual {
+    position: relative;
+    text-align: center;
+}
+
+.error-number {
+    font-size: 12rem;
+    font-weight: 900;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.error-icon {
+    font-size: 4rem;
+    color: var(--primary-color);
+    opacity: 0.7;
+}
+
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.float-element {
+    position: absolute;
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
+    animation-delay: var(--delay);
+    left: var(--x);
+    top: var(--y);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
+    50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+}
+
+.error-text {
+    text-align: left;
+}
+
+.error-text h1 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.error-message {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.quick-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.helpful-links {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.helpful-links h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.link-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.15);
+    border-color: var(--primary-color);
+}
+
+.link-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.link-card h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.link-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.link-btn {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.link-btn:hover {
+    gap: 1rem;
+}
+
+.search-section {
+    padding: 80px 0;
+}
+
+.search-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.search-content h3 {
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.search-input-group {
+    display: flex;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.search-input-group input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem 0 0 0.5rem;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+}
+
+.search-btn {
+    padding: 1rem 1.5rem;
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    border-radius: 0 0.5rem 0.5rem 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid var(--primary-color);
+    border-top: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+    display: none;
+}
+
+.suggestion-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.suggestion-item:hover {
+    background: #f8fafc;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.popular-searches {
+    margin-top: 2rem;
+}
+
+.popular-label {
+    color: #666;
+    margin-right: 1rem;
+}
+
+.tag {
+    display: inline-block;
+    background: #f1f5f9;
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.support-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.support-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.support-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.support-content h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.support-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.support-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .error-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .error-number {
+        font-size: 8rem;
+    }
+    
+    .error-text {
+        text-align: center;
+    }
+    
+    .error-text h1 {
+        font-size: 2rem;
+    }
+    
+    .quick-actions {
+        justify-content: center;
+    }
+    
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .support-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    .support-actions {
+        justify-content: center;
+    }
+    
+    .search-input-group {
+        flex-direction: column;
+    }
+    
+    .search-input-group input {
+        border-radius: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .search-btn {
+        border-radius: 0.5rem;
+    }
+}
+</style>
+
+<script>
+// Простой поиск по сайту
+const searchData = [
+    { title: 'Возможности', url: '/features/', keywords: ['функции', 'возможности', 'сигналы', 'анализ'] },
+    { title: 'Аналитика', url: '/analytics/', keywords: ['статистика', 'результаты', 'графики', 'данные'] },
+    { title: 'О проекте', url: '/about/', keywords: ['команда', 'история', 'технологии', 'миссия'] },
+    { title: 'Контакты', url: '/contact/', keywords: ['поддержка', 'помощь', 'связаться', 'telegram'] },
+    { title: 'Главная', url: '/', keywords: ['главная', 'дом', 'начало', 'home'] }
+];
+
+function performSearch() {
+    const query = document.getElementById('siteSearch').value.toLowerCase().trim();
+    if (!query) return;
+    
+    const results = searchData.filter(item => 
+        item.title.toLowerCase().includes(query) ||
+        item.keywords.some(keyword => keyword.includes(query))
+    );
+    
+    if (results.length > 0) {
+        // Перенаправляем на первый найденный результат
+        const baseUrl = '{{ site.baseurl }}' || '';
+        window.location.href = baseUrl + results[0].url;
+    } else {
+        showNotification('По вашему запросу ничего не найдено. Попробуйте другие ключевые слова.', 'warning');
+    }
+}
+
+// Поиск по Enter
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('siteSearch');
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        // Простые подсказки
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            const suggestions = document.getElementById('searchSuggestions');
+            
+            if (query.length > 2) {
+                const matches = searchData.filter(item => 
+                    item.keywords.some(keyword => keyword.includes(query))
+                ).slice(0, 5);
+                
+                if (matches.length > 0) {
+                    suggestions.innerHTML = matches.map(item => 
+                        `<div class="suggestion-item" onclick="window.location.href='{{ site.baseurl }}${item.url}'">${item.title}</div>`
+                    ).join('');
+                    suggestions.style.display = 'block';
+                } else {
+                    suggestions.style.display = 'none';
+                }
+            } else {
+                suggestions.style.display = 'none';
+            }
+        });
+        
+        // Скрытие подсказок при клике вне поля
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.search-input-group')) {
+                document.getElementById('searchSuggestions').style.display = 'none';
+            }
+        });
+    }
+});
+
+// Отчет об ошибке
+console.log('404 Error: Page not found -', window.location.href);
+
+// Попытка помочь пользователю
+if (window.location.pathname.includes('/old/') || window.location.pathname.includes('/deprecated/')) {
+    showNotification('Эта страница была перемещена. Попробуйте найти нужную информацию через поиск или навигацию.', 'info');
+}
+</script>

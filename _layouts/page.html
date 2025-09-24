@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="page-content">
+    <div class="container">
+        {% if page.title %}
+        <header class="page-header" style="padding-top: 120px; padding-bottom: 60px;">
+            <h1 class="section-title">{{ page.title }}</h1>
+            {% if page.description %}
+            <p class="section-subtitle">{{ page.description }}</p>
+            {% endif %}
+        </header>
+        {% endif %}
+
+        <div class="page-body">
+            {{ content }}
+        </div>
+    </div>
+</div>
